@@ -1,0 +1,72 @@
+
+a {
+    color: #dc3545;
+}
+body{
+    background: #314234;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+    color: black;
+    background-color: #A5C9AD;
+    padding-top: 1.5rem;
+    padding-bottom: .5rem;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+#mycard {
+    
+}
+/* Cards */
+.card{
+    margin-right: 1.5rem;
+    border: 5px solid rgba(0,0,0,0.2);
+    border-radius: 2%;
+    background: #ffd396;
+    
+}
+.card-group{
+    align-content: center;
+    margin-top: 5rem;
+    margin-right: 1.5rem;
+    padding-left: 350px;
+}
+
+img{
+    margin: 20% 0;
+    height: 25%;
+    width: 25%;
+}
+
+/* Cards */
+.navbar{
+    background-color: #93c99d;
+}
+
+.navbar-brand {
+    color: #dc3545;
+}
+
+
+
+.nav-link{
+    color: #b84b3b;
+}
+.nav-link:hover{
+    color: #fff;
+}
+
+.position{
+    margin: auto;
+
+}
+
+
+.nav-link{
+    margin-right: 300px;
+}
