@@ -19,12 +19,13 @@ function createWindow () {
 
 
   mainWindow = new BrowserWindow({
-    width: 1920, height: 1080,
+    width: 600 , height: 600,
     x: 0, y: 50,
-    minWidth: 1920, minHeight: 1080,
+    minWidth: 100, minHeight: 100,
+    maxWidth: 1920, maxHeight: 1080,
     frame: true,
     titleBarOverlay: {
-      titleBarOverlay: false, 
+      titleBarOverlay: true, 
       color: '#2B2E3B',
       symbolColor: 'orange',
     },
