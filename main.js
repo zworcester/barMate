@@ -53,7 +53,7 @@ function createWindow () {
   //console.log(Object.is(ses, customSes))
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadFile('cocktailBuilder.html')
+  mainWindow.loadFile('test.html')
 
 
 
