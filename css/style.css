@@ -152,3 +152,49 @@ title{
 }
 
 /*#fce38a, #13120b, #000000, #a6a6a6, #725f1a and ##7c8489*/
+.ingredients-registry-container{
+    text-align: center;
+    list-style-type: none;
+    color: black;
+}
+
+.ingredients-registry-header {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 36px;
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: fit-content;
+    max-width: 32em;
+    max-height: 48em;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    z-index: 99;
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
