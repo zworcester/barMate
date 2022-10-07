@@ -27,7 +27,6 @@ compile_commands.json
 # Electron
 node_modules/
 package-lock.json
-package.json
 
 # Kate
 *.kate-swap

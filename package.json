@@ -1,0 +1,23 @@
+{
+  "name": "barmate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zworcester/barMate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zworcester/barMate/issues"
+  },
+  "homepage": "https://github.com/zworcester/barMate#readme",
+  "devDependencies": {
+    "electron": "^21.1.0"
+  }
+}
