@@ -17,6 +17,11 @@
     <script src="https://kit.fontawesome.com/6092e90ed9.js" crossorigin="anonymous"></script>
   
     <link rel="stylesheet" href="cardTest.css">
+    <style>
+      #myElement {
+          border:1px solid #CCC;
+      }
+  </style>
 </head>
 <body>
 
@@ -55,7 +60,7 @@
         </nav>
     <div class="row">
         <div class="col">
-        <div class="card">
+        <div class="card" id="myElement">
             <div class="img-box">
                 <img src="./images/img1.jpg">
             </div>
@@ -87,7 +92,18 @@
                           </table>
                     </div>
                     <div class="action-Button">
-                        <button>Edit</button>
+                        <button onmouseleave="revertStyle()" onclick="changeStyle()">Edit</button>
+                        <script>
+                          function changeStyle(){
+                              var element = document.getElementById("myElement");
+                              element.style.paddingBottom = "500px";
+                          }
+
+                          function revertStyle(){
+                            var element = document.getElementbyId('myElement');
+                            element.sytle.padding = "200px"
+                          }
+                          </script>
                         <button>Delete</button>
                     </div>
                 </div>
@@ -95,7 +111,7 @@
         </div>
     </div>
         <div class="col">
-        <div class="card">
+        <div class="card" id="cardNumber">
             <div class="img-box">
                 <img src="./images/img2.jpg">
             </div>

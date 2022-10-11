@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+::-webkit-scrollbar {
+    display: none;
+}
 
 * {
     margin: 0;
@@ -7,18 +10,38 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.nav-link {
+    /* margin-left: 100px; */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin-right: 100px;
+}
+
+.container-fluid {
+    top: 0;
+    left: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    position: fixed;
+}
+
 body {
-        color: green;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(45deg, #fbda61, #ff5acd);
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fbda61, #ff5acd);
 }
 
 .col {
     margin: 50px 10px;
 }
+
 .card {
     position: relative;
     width: 350px;
@@ -26,7 +49,7 @@ body {
     /* height: 450px; */
     background: #e7f7f3;
     border-radius: 20px;
-    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
     transition: 0.5s;
 }
 
@@ -43,7 +66,7 @@ body {
     height: 150px;
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     transition: 0.5s;
 }
@@ -57,7 +80,7 @@ body {
     object-fit: cover;
 }
 
-.card:hover .img-box{
+.card:hover .img-box {
     width: 250px;
     height: 250px;
 }
@@ -75,6 +98,7 @@ body {
 .card .content .details {
     padding: 40px;
     padding-bottom: 30px;
+    /* change padding-bottom to 80 on MainPage for alignment */
     text-align: center;
     width: 100%;
     transition: 0.5s;
@@ -84,6 +108,7 @@ body {
 .card:hover .content .details {
     transform: translateY(0px);
 }
+
 .card .content .details h2 {
     font-size: 1.25em;
     font-weight: 600;
@@ -134,7 +159,7 @@ body {
     cursor: pointer;
 }
 
-.card .content .details .action-Button button:nth-child(2){
+.card .content .details .action-Button button:nth-child(2) {
     border: 1px solid #999;
     color: #999;
     background: #fff;
@@ -146,6 +171,7 @@ body {
     line-height: 1.2em;
     font-weight: 600;
 }
+
 .card:hover .content .details .data table {
     font-size: 0.85em;
     color: #555;
@@ -158,4 +184,30 @@ th {
     padding-right: 50px;
 }
 
+
 /* .card .content .details .data  */
+
+.mainMenu-Button {
+    flex: none;
+}
+
+.mainMenu-Button button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: #ff5f95;
+    color: #fff;
+    cursor: pointer;
+}
+
+.row {
+    padding-top: 50px;
+}
+
+.data {
+    overflow-y: auto;
+    height: 50px;
+}
