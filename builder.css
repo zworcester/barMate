@@ -1,0 +1,339 @@
+/**************************Effects Everyting******************************/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    /* background: linear-gradient(-315deg, #fbda61, #ff5acd); */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-315deg, #fbda61, #ff5acd);
+}
+
+h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+    margin: 100px 0px auto auto;
+}
+
+
+/**************************NavBar******************************/
+
+.nav-link {
+    /* margin-left: 100px; */
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin-right: 100px;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.container-fluid {
+    top: 0;
+    left: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.content {
+    /*avoids grad repeat*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    /* justify-content: center;
+    align-content: space-around;
+    gap: 10px; */
+}
+
+
+/******************************Black Box for Items Selected*************************************/
+
+.contentList {
+    height: 400px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+h4 u {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    margin: 20px 0px auto auto;
+    color: #fbda61;
+}
+
+
+/* .content .mainItems {
+ flex-basis: auto; 
+    align-self: auto;
+} */
+
+#tableListName {
+    width: 100%;
+}
+
+tbody {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    /* border: 1px solid black; */
+    display: flex;
+    float: left;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+th,
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+.deleteButton {
+    background: url(./imgs/trash-can-solid.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    width: 15px;
+    fill: #ff5acd;
+}
+
+li {
+    color: #fff;
+}
+
+.list {
+    margin: 0 100px;
+    /* padding-right: 350px;
+    padding-bottom: 500px; */
+    background-color: #13120b;
+    border-radius: 30px;
+    overflow-y: auto;
+}
+
+.list ul {
+    /* padding-top: 32px; */
+    padding-left: 40px;
+}
+
+.list h1 {
+    /* padding-top: 1px; */
+    font-size: 2rem;
+}
+
+
+/**************************Second Grid Display******************************/
+
+.cnt {
+    align-items: center;
+    margin-left: 150px;
+}
+
+.content .img-center {
+    justify-content: center;
+}
+
+.contentSearchBars {
+    /*avoids grad repeat*/
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: space-around;
+    gap: 10px;
+}
+
+
+/******************************Buttons*************************************/
+
+input {
+    font-size: 50px;
+    padding-left: 25px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-outline {
+    width: 90%;
+    padding-right: 50px;
+    padding-left: 80px;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #13120b;
+    color: #fff;
+    border-radius: 50px;
+    padding: 30px;
+    margin-left: 20px;
+}
+
+.form-control:focus {
+    background-color: #13120b;
+    color: #fff;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.box>i {
+    font-size: 20px;
+    color: #ebc43b;
+}
+
+.box>input {
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+#mg {
+    position: relative;
+    z-index: 1;
+    left: -225px;
+    top: 1px;
+    color: #ebc43b;
+    cursor: pointer;
+    width: 0;
+}
+
+
+/******************************Images&Animations***************************/
+
+img {
+    display: block;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    opacity: 80%;
+}
+
+.shape {
+    background: linear-gradient(45deg, #01f7ff28 0%, #00eeff1f 100%);
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
+    /* border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; */
+    animation: shapeAni 8s ease-in-out infinite;
+    z-index: -1;
+    align-items: center;
+}
+
+.shape:nth-child(1) {
+    background: linear-gradient(45deg, #1a1b1b27 0%, #ff009d1f 100%);
+    width: 350px;
+    height: 350px;
+    animation: shapeAni 8s alternate-reverse infinite;
+    z-index: -2;
+}
+
+
+/* .shape div:nth-child(2) {
+    background: linear-gradient(45deg, #6361e927 0%, #efff5e28 100%);
+    width: 100px;
+    height: 100px;
+} */
+
+@keyframes shapeAni {
+    0% {
+        translate: 20px 0 0 0 ease-in-out;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        translate: 20px 20px ease-in-out;
+    }
+    50% {
+        border-radius: 30% 5% 10% 10%;
+        translate: -20px 20px ease-in-out;
+        rotate: 45deg;
+    }
+    75% {
+        translate: -20px 0px;
+        rotate: -45deg;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        translate: 0px 0px;
+        rotate: 0deg;
+    }
+}
+
+.imgAnimation {
+    z-index: 1;
+    animation: loader 5s ease-in-out infinite;
+}
+
+@keyframes loader {
+    0% {
+        translate: 0px ease-in-out;
+    }
+    25% {
+        translate: 20px 20px ease-in-out;
+    }
+    50% {
+        translate: -20px 20px ease-in-out;
+        rotate: 45deg;
+    }
+    75% {
+        translate: -20px 0px;
+        rotate: -45deg;
+    }
+    100% {
+        translate: 0px 0px;
+        rotate: 0deg;
+    }
+}
+
+
+/*#fce38a, #13120b, #000000, #a6a6a6, #725f1a and ##7c8489*/
+
+
+/******************************Bottom Paddiing***************************/
+
+#BottomPadding {
+    padding-bottom: 350px;
+}
