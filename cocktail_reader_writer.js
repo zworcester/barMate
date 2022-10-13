@@ -15,11 +15,12 @@ class CocktailReaderWriter{
     // getCocktail gets the cocktail that has the same name as the supplied string. If no such cocktail exists, undefined is returned
     // instead.
     getCocktail(id) {
-        if (name in this.document.cocktails) {
-            return this.document.cocktails[id];
+        if (id >= this.document.cocktails.length){
+            return undefined;
         }
 
-        return undefined;
+
+        return this.document.cocktails[id];
     }
 
     size()
