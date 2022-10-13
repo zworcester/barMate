@@ -1,6 +1,7 @@
+
+
 {
-    "cocktails" : {
-        "Whiskey Old Fashioned" :
+    "cocktails" : [
         {
             "name" : "Whiskey Old Fashioned",
             "description" : "A classic cocktail",
@@ -11,8 +12,20 @@
                 "Simple Syrup" : [0.0,0.33333],
                 "Orange Peel" : [0.0,0.0],
                 "Maraschino Cherry" : [0.0,0.0]
-            },
+            }
+        },
+        
+        {
+            "name" : "Whiskey Old Fashioned",
+            "description" : "A classic cocktail",
+            "image" : "https://0.0.0.0/",
+            "ingredients" : {
+                "Buffalo Trace Bourbon" : [45.0,2],
+                "Angostura Aromatic Bitters" : [44.7,0.09375],
+                "Simple Syrup" : [0.0,0.33333],
+                "Orange Peel" : [0.0,0.0],
+                "Maraschino Cherry" : [0.0,0.0]
+            }
         }
-
-    }
+    ]
 }
