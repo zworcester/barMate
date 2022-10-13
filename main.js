@@ -57,6 +57,8 @@ function createWindow () {
 
 
 
+ mainWindow.webContents.openDevTools()
+
   mainWindow.webContents.on('did-finish-load', () =>{
     // dialog.showOpenDialog({
     //   buttonLabel: "Select a photo",

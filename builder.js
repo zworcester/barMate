@@ -34,6 +34,6 @@ const addAlcoholItem = document.querySelector('#addAlcoholItem');
 
 addAlcoholItem.addEventListener('click', () => {
     const tr = tableListName.querySelector('tr');
-    const td = document.createElement('td');
+    const td = document.createElementby('td');
     tr.appendChild(td);
 });
