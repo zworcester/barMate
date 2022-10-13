@@ -14,16 +14,22 @@ class CocktailReaderWriter{
 
     // getCocktail gets the cocktail that has the same name as the supplied string. If no such cocktail exists, undefined is returned
     // instead.
-    getCocktail(name) {
+    getCocktail(id) {
         if (name in this.document.cocktails) {
-            return this.document.cocktails[name];
+            return this.document.cocktails[id];
         }
 
         return undefined;
     }
 
+    size()
+    {
+        return this.document.cocktails.length;
+    }
+
     // Replace an cocktail in memory with the supllied cocktail. This will replace all cocktails that share a name.
     // Returns true if the requested cocktail exists, else returns false.
+    /*
     modifyCocktail(name, cocktail) {
         if (name in this.document.cocktails){
             if (name != cocktail.name) {
@@ -55,5 +61,6 @@ class CocktailReaderWriter{
     writeToFile() {
         fs.writeFileSync(path.join(__dirname, 'data', this.file_path), this.document.stringify());
     }
+    */
 
 };
