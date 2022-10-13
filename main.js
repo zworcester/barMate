@@ -80,9 +80,9 @@ function createWindow () {
     // })
   })
 
-
+/*
   let wc = mainWindow.webContents
-  console.log( webContents.getAllWebContents())
+  //console.log( webContents.getAllWebContents())
 
   wc.on('did-finish-load', () => {
     console.log('Content Fully Loaded')
@@ -91,7 +91,7 @@ function createWindow () {
     console.log('DOM Ready')
   })
 
-  /*wc.on('context-menu', (e, params) => {
+  wc.on('context-menu', (e, params) => {
     let selectedText = params.selectionText
 
 
