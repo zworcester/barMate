@@ -5,7 +5,7 @@
         {
             "name" : "Whiskey Old Fashioned",
             "description" : "A classic cocktail",
-            "image" : "https://0.0.0.0/",
+            "image" : "null_cocktail.png",
             "ingredients" : {
                 "Buffalo Trace Bourbon" : [45.0,2],
                 "Angostura Aromatic Bitters" : [44.7,0.09375],
@@ -16,13 +16,13 @@
         },
         
         {
-            "name" : "Whiskey Old Fashioned",
-            "description" : "A classic cocktail",
-            "image" : "https://0.0.0.0/",
+            "name" : "Thus of  Ould Fashioned",
+            "description" : "A classic cocktail, but even more classic",
+            "image" : "null_cocktail.png",
             "ingredients" : {
                 "Buffalo Trace Bourbon" : [45.0,2],
-                "Angostura Aromatic Bitters" : [44.7,0.09375],
-                "Simple Syrup" : [0.0,0.33333],
+                "Bogart's Aromatic Bitters" : [44.7,0.09375],
+                "Muddled Sugar Cubes" : [0.0,0.33333],
                 "Orange Peel" : [0.0,0.0],
                 "Maraschino Cherry" : [0.0,0.0]
             }
