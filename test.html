@@ -16,9 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6092e90ed9.js" crossorigin="anonymous"></script>
     <script src="cocktail_reader_writer.js"></script>
-    <script>
-      const cocktails = new CocktailReaderWriter("sample_cocktail.json")
-    </script>
+    <script src="recipe_card.js"></script>
 
     <link rel="stylesheet" href="cardTest.css">
     <style>
@@ -30,7 +28,8 @@
 <body>
 
     <script>
-      console.log(cocktails.getCocktail(0).name)
+      const cocktails = new CocktailReaderWriter("sample_cocktail.json");
+      console.log(cocktails.cocktails);
     </script>
 
         <!-- Nav Bar -->
@@ -68,7 +67,7 @@
           </nav>
       </div>
   </section>
-    <div class="row">
+    <div class="row" id="cocktailListRow">
         <div class="col">
         <div class="card" id="myElement">
             <div class="img-box">
@@ -437,6 +436,10 @@
             </div>
         </div>
         </div>
+        <script>
+          let dynamic_row = new CocktailCards("cocktailListRow", cocktails);
+          dynamic_row.inner_html_create_cards();
+        </script>
     
     </div>
     
