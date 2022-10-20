@@ -17,7 +17,8 @@
 }
 
 .navbar-nav {
-    margin-right: 100px;
+    justify-content: right;
+    margin-right: 125px;
 }
 
 .container-fluid {
@@ -39,7 +40,8 @@ body {
 }
 
 .col {
-    margin: 50px 10px;
+    /*margin: 50px 10px;*/
+    margin: 33px auto;
 }
 
 .card {
@@ -204,6 +206,8 @@ th {
 }
 
 .row {
+    margin: auto;
+    width: 90%;
     padding-top: 50px;
 }
 
