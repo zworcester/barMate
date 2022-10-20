@@ -3,8 +3,8 @@
 {
     "cocktails" : [
         {
-            "name" : "Nikka Gin Martini",
-            "description" : "The a Nikka spin on a Classic Dry Martini.",
+            "name" : "The Nikka Gin Martini",
+            "description" : "A Nikka spin on a Classic Dry Martini.",
             "image" : "nikka_martini.jpg",
             "ingredients" : {
                 "Nikka Coffey Gin" : [47.0,2],

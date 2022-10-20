@@ -13,8 +13,24 @@ class CocktailCard{
 		this.ingredients= cocktail.ingredients;
 	}
 
+	getABV(){
+		let content_volume = 0.0;
+		let total_volume = 0.0;
+
+		for (const ing in this.ingredients){
+			content_volume += this.ingredients[ing][0] * this.ingredients[ing][1];
+			total_volume += this.ingredients[ing][1];
+		}
+
+		if (content_volume == 0.0 || total_volume == 0.0){
+			return 0.0;
+		}
+
+		return (content_volume / total_volume).toPrecision(4);
+	}
+
 	getCard(){
-		let ingredients_string = "<tr><th>ABV and Description Here</th></tr>";
+		let ingredients_string = "";
 
 		const nuImg = path.join(__dirname, 'data', 'images', this.image);
 
@@ -22,7 +38,7 @@ class CocktailCard{
 			ingredients_string += ("<tr><th>" + ing + "</th><th>ABV: " + this.ingredients[ing][0] + "</th><th>Ratio: " + this.ingredients[ing][1] + "</th></tr>");
 		}
 
-		return "<div class=\"col\"><div class=\"card\" id=\"card-" + this.name + "\"><div class=\"img-box\"><img src=\"" + nuImg + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>Ingredients</span></h2><div class=\"data\"><table>" + ingredients_string + "</table></div><div class =\"action-Button\"><button onmouseleave=\"revertStyle()\" onclick=\"changeStyle()\">Edit</button><script>\nfunction changeStyle(){\n\tvar element = document.getElementById(\"card-" + this.name + "\");\n\telement.style.paddingBottom = \"500px\";\n}\nfunction revertStyle(){\n\tvar element= document.getElementbyId(\"card-" + this.name + "\");\n\telement.style.padding=\"200px\";\n}</script><button>Delete</button></div></div></div></div></div>";
+	return "<div class=\"col\"><div class=\"card\" id=\"card-" + this.name + "\"><div class=\"img-box\"><img src=\"" + nuImg + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>" + this.getABV() + "% ABV</span></h2><div class=\"data\" style=\"text-align: center\"><span style=\"color:black\">" + this.description + "</span></div><div class =\"action-Button\"><button onmouseleave=\"revertStyle()\" onclick=\"changeStyle()\">Edit</button><script>\nfunction changeStyle(){\n\tvar element = document.getElementById(\"card-" + this.name + "\");\n\telement.style.paddingBottom = \"500px\";\n}\nfunction revertStyle(){\n\tvar element= document.getElementbyId(\"card-" + this.name + "\");\n\telement.style.padding=\"200px\";\n}</script><button>View</button></div></div></div></div></div>";
 	}
 
 };
