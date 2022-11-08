@@ -42,6 +42,7 @@ textarea {
     border-bottom: 2px solid #ff5acd;
     font-size: 32px;
     font-weight: 600;
+    resize: none;
 }
 
 textarea.textDescription {
@@ -187,7 +188,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 20%;
-    max-height: 100%;
+    max-height: 500px;
     min-width: 20%;
     /* background: #1816160a; */
     background: linear-gradient(-315deg, #252523, #252425);
@@ -195,6 +196,7 @@ body {
     z-index: 2;
     backdrop-filter: blur(3rem);
     margin: 20px 20px;
+    overflow: auto;
 }
 
 .boxABV {

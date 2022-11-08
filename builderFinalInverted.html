@@ -12,6 +12,10 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6092e90ed9.js" crossorigin="anonymous"></script>
+    <script src="inject_ingredient_field.js"></script>
+    <script>
+        ingredients_injector = new ingredient_field_injector("ing_box");
+    </script>
 
     <link rel="stylesheet" href="builderFinalInverted.css">
 
@@ -72,10 +76,14 @@
         <div class="row">
 
             <!-- Ingredient columns -->
-            <div class="col">
-                <div class="box">
+            <div class="col"><div class="mainMenu-Button"><button onclick="ingredients_injector.new_field()">+</button></div>
+                <div class="box" id="ing_box">
                     <h2><u>Ingredients</u></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita aliquid voluptatum quisquam! Officiis necessitatibus dolorem harum vero laboriosam eaque esse. Ab dolorum tenetur, hic fugit optio ipsum soluta quas?</p>
+                    <div class="d-flex flex-row" name="ing_row">
+                        <div class="p-2">Name</div>
+                        <div class="p-2">ABV (%)</div>
+                        <div class="p-2">Volume (Oz)</div>
+                    </div>
                 </div>
             </div>
 

@@ -22,7 +22,7 @@ function createWindow () {
     width: 600 , height: 600,
     x: 0, y: 50,
     minWidth: 100, minHeight: 100,
-    maxWidth: 1920, maxHeight: 1080,
+    maxWidth: 2560, maxHeight: 1440,
     frame: true,
     titleBarOverlay: {
       titleBarOverlay: true, 
