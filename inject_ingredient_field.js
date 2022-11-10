@@ -5,7 +5,14 @@ class ingredient_field_injector{
 
     new_field() {
         const ing_box = document.getElementById(this.element_id);
-        ing_box.innerHTML += "<div class=\"d-flex flex-row\" name=\"ing_row\"><input title=\"Name\" placeholder=\"Name\" type=\"text\" name=\"name\"><input title=\"ABV (%)\" placeholder=\"ABV (%)\" type=\"number\" name=\"abv\"><input title=\"Volume (Oz)\" placeholder=\"Volume (Oz)\"  type=\"number\" name=\"volume\"></div>";
+
+        const form_name = "form-" + Math.random() * (Number.MAX_SAFE_INTEGER).toString();
+
+        ing_box.innerHTML += "<div class=\"d-flex flex-row\" name=\"ing_row\"><form onsubmit=\"return false;\" id=\"" + form_name + "\"><div class=\"input-group\"><input title=\"Name\" placeholder=\"Name\" type=\"text\" name=\"name\"><input title=\"ABV (%)\" placeholder=\"ABV (%)\" type=\"number\" name=\"abv\"><input title=\"Volume (Oz)\" placeholder=\"Volume (Oz)\"  type=\"number\" name=\"volume\"></form></div></div>";
+
+        const form_ = document.getElementById(form_name);
+        function handleForm(event) { print("based"); }
+        form_.addEventListener('submit', handleForm);
 
     }
 

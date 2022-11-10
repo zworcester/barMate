@@ -13,8 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6092e90ed9.js" crossorigin="anonymous"></script>
     <script src="inject_ingredient_field.js"></script>
+    <script src="temp_cocktail_data_handler.js"></script>
     <script>
         ingredients_injector = new ingredient_field_injector("ing_box");
+        temp_data_handler = new tempCocktailDataHandler();
     </script>
 
     <link rel="stylesheet" href="builderFinalInverted.css">
@@ -76,7 +78,9 @@
         <div class="row">
 
             <!-- Ingredient columns -->
-            <div class="col"><div class="mainMenu-Button"><button onclick="ingredients_injector.new_field()">+</button></div>
+            <div class="col"><div class="mainMenu-Button">
+                <button onclick="ingredients_injector.new_field();" id="plus-button">+</button>
+            </div>
                 <div class="box" id="ing_box">
                     <h2><u>Ingredients</u></h2>
                     <div class="d-flex flex-row" name="ing_row">
@@ -84,6 +88,7 @@
                         <div class="p-2">ABV (%)</div>
                         <div class="p-2">Volume (Oz)</div>
                     </div>
+                    <div class="d-flex flex-row" name="ing_row"><form onsubmit="return false;" id="default"><div class="input-group"><input title="Name" placeholder="Name" type="text" name="name"><input title="ABV (%)" placeholder="ABV (%)" type="number" name="abv"><input title="Volume (Oz)" placeholder="Volume (Oz)"  type="number" name="volume"></form></div></div>
                 </div>
             </div>
 
@@ -97,11 +102,18 @@
                     </label>
 
                     </div>
-                    <textarea placeholder="Name Me ☻"></textarea>
+                    <textarea placeholder="Name Me ☻" id="name_textarea"></textarea>
+                    <script>
+                        name_area = document.getElementById("name_textarea");
+
+                        if (temp_data_handler.getName() != null){
+                            name_area.value = temp_data_handler.getName();
+                        }
+                    </script>
                 </div>
                 <div class="boxDescripton">
                     <h2><u>Description</u></h2>
-                    <textarea class="textDescription" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita aliquid voluptatum quisquam! Officiis necessitatibus dolorem harum vero laboriosam eaque esse. Ab dolorum tenetur, hic fugit optio ipsum soluta quas?"></textarea>
+                    <textarea class="textDescription" placeholder="Give your cocktail a fancy name..."></textarea>
 
                 </div>
             </div>

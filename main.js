@@ -151,6 +151,7 @@ function createWindow () {
   mainWindow.on('closed',  () => {
     mainWindow = null
   })
+
   // secWindow.on('closed',  () => {
   //   secWindow = null
   // })
