@@ -96,9 +96,16 @@
             <div class="col">
                 <div class="box">
                     <div class="img-box " id="imgBox">
-                        <input type="file" accept="image" name="image" id="file" class="uploadImg" onchange="loadFile(event)">
+                        <input type="file" accept="image" name="image" id="file" class="uploadImg" onchange="loadFile(event,temp_data_handler)">
                         <label for="file">
                     <img src="./imgs/ingredientsImg.png" id="oldImg" alt="">
+                    <script>
+                        img_area = document.getElementById("oldImg");
+
+                        if (temp_data_handler.getImage() != null){
+                            img_area.src = temp_data_handler.getImage();
+                        }
+                    </script>
                     </label>
 
                     </div>
@@ -106,15 +113,33 @@
                     <script>
                         name_area = document.getElementById("name_textarea");
 
+                        name_area.addEventListener("input", function handleChange1(event) {
+                            console.log(event.target.value);
+
+                            temp_data_handler.setName(event.target.value);
+                        });
+
                         if (temp_data_handler.getName() != null){
-                            name_area.value = temp_data_handler.getName();
+                            name_area.innerHTML = temp_data_handler.getName();
                         }
                     </script>
                 </div>
                 <div class="boxDescripton">
                     <h2><u>Description</u></h2>
-                    <textarea class="textDescription" placeholder="Give your cocktail a fancy name..."></textarea>
+                    <textarea class="textDescription" id="desc_textarea" placeholder="Give your cocktail a fancy description..."></textarea>
+                    <script>
+                        desc_area = document.getElementById("desc_textarea");
 
+                        desc_area.addEventListener("input", function handleChange2(event) {
+                            console.log(event.target.value);
+
+                            temp_data_handler.setDescription(event.target.value);
+                        });
+
+                        if (temp_data_handler.getDescription() != null){
+                            desc_area.innerHTML = temp_data_handler.getDescription();
+                        }
+                    </script>
                 </div>
             </div>
 

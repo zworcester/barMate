@@ -19,9 +19,10 @@ function myFunction() {
 var oldImg = document.getElementsByClassName("oldImg");
 
 
-var loadFile = function(event) {
+var loadFile = function(event, handler) {
     var image = document.getElementById('oldImg');
     image.src = URL.createObjectURL(event.target.files[0]);
+    handler.setImage(event.target.files[0].path);
 };
 
 // var ABVContent = document.getElementById('ABV').on('keyup', function() {
