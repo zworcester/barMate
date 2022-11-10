@@ -15,7 +15,7 @@
     <script src="inject_ingredient_field.js"></script>
     <script src="temp_cocktail_data_handler.js"></script>
     <script>
-        ingredients_injector = new ingredient_field_injector("ing_box");
+        ingredients_injector = new ingredient_field_injector("button_content", "ingredients_injector");
         temp_data_handler = new tempCocktailDataHandler();
     </script>
 
@@ -73,14 +73,17 @@
     <div id="OverlayID" class="Overlay"></div>
     <div class="container">
         <div class="mainMenu-Button">
-            <button onclick="RemoveOverlay()">Edit</button>
+            <button onclick="RemoveOverlay(); ingredients_injector.replace_button();">Edit</button>
         </div>
         <div class="row">
 
             <!-- Ingredient columns -->
-            <div class="col"><div class="mainMenu-Button">
-                <button onclick="ingredients_injector.new_field();" id="plus-button">+</button>
-            </div>
+            <div class="col">
+                <div id="button_content">
+                    <div class="mainMenu-Button">
+                        <button onclick="ingredients_injector.open_button();" id="plus-button">+</button>
+                    </div>
+                </div>
                 <div class="box" id="ing_box">
                     <h2><u>Ingredients</u></h2>
                     <div class="d-flex flex-row" name="ing_row">
@@ -88,7 +91,9 @@
                         <div class="p-2">ABV (%)</div>
                         <div class="p-2">Volume (Oz)</div>
                     </div>
-                    <div class="d-flex flex-row" name="ing_row"><form onsubmit="return false;" id="default"><div class="input-group"><input title="Name" placeholder="Name" type="text" name="name"><input title="ABV (%)" placeholder="ABV (%)" type="number" name="abv"><input title="Volume (Oz)" placeholder="Volume (Oz)"  type="number" name="volume"></form></div></div>
+                    <div id="ingredient_content">
+
+                    </div>
                 </div>
             </div>
 
