@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fbda61, #ff5acd);
+}
+
+
+/* -----------------------------NAVBAR-------------------------------------- */
+
+.nav-link {
+    /* margin-left: 100px; */
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ----------------------------Container------------------------------------ */
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    /* background: linear-gradient( rgba(49, 47, 47, 0.1), rgba(49, 47, 47,
+    0.418)); */
+    /* background: linear-gradient(-315deg, #fbda61, #ff5acd); */
+    top: 50%;
+    border-radius: 1rem;
+    margin-top: 20px;
+    padding: 20px;
+    z-index: -1;
+}
+
+.row {
+    padding-top: 200px;
+}
+
+.col {
+    margin: 50px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    /* height: 450px; */
+    background: #e7f7f3;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+.card:hover {
+    height: 450px;
+}
+
+.img-box {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .img-box {
+    width: 250px;
+    height: 250px;
+}
+
+.card .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .content .details {
+    padding: 40px;
+    padding-bottom: 30px;
+    /* change padding-bottom to 80 on MainPage for alignment */
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(150px);
+}
+
+.card:hover .content .details {
+    transform: translateY(0px);
+}
+
+.card .content .details h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2em;
+}
+
+.card .content .details h2 span {
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.card .content .details .data {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card .content .details .data h3 {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.2em;
+    font-weight: 600;
+}
+
+.card .content .details .data h3 span {
+    font-size: 0.85em;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.card .content .details .action-Button {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+
+.card .content .details .action-Button button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: #ff5f95;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card .content .details .action-Button button:nth-child(2) {
+    border: 1px solid #999;
+    color: #999;
+    background: #fff;
+}
+
+.card .content .details .data table {
+    font-size: 0.85em;
+    color: rgba(85, 85, 85, 0);
+    line-height: 1.2em;
+    font-weight: 600;
+}
+
+.card:hover .content .details .data table {
+    font-size: 0.85em;
+    color: #555;
+    line-height: 1.2em;
+    font-weight: 600;
+    text-align: left;
+}
+
+th {
+    padding-right: 50px;
+}
+
+
+/* .card .content .details .data  */
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+.mainMenu-Button {
+    flex: none;
+}
+
+.mainMenu-Button button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: #ff5f95;
+    color: #fff;
+    cursor: pointer;
+}
+
+.data {
+    overflow-y: auto;
+    height: 50px;
+}

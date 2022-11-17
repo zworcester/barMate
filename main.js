@@ -22,7 +22,7 @@ function createWindow () {
     width: 600 , height: 600,
     x: 0, y: 50,
     minWidth: 100, minHeight: 100,
-    maxWidth: 1920, maxHeight: 1080,
+    maxWidth: 2560, maxHeight: 1440,
     frame: true,
     titleBarOverlay: {
       titleBarOverlay: true, 
@@ -53,9 +53,11 @@ function createWindow () {
   //console.log(Object.is(ses, customSes))
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadFile('cocktailBuilder.html')
+  mainWindow.loadFile('./refactoredCode/builder.html')
 
 
+
+ mainWindow.webContents.openDevTools()
 
   mainWindow.webContents.on('did-finish-load', () =>{
     // dialog.showOpenDialog({
@@ -80,9 +82,9 @@ function createWindow () {
     // })
   })
 
-
+/*
   let wc = mainWindow.webContents
-  console.log( webContents.getAllWebContents())
+  //console.log( webContents.getAllWebContents())
 
   wc.on('did-finish-load', () => {
     console.log('Content Fully Loaded')
@@ -91,7 +93,7 @@ function createWindow () {
     console.log('DOM Ready')
   })
 
-  /*wc.on('context-menu', (e, params) => {
+  wc.on('context-menu', (e, params) => {
     let selectedText = params.selectionText
 
 
@@ -149,6 +151,7 @@ function createWindow () {
   mainWindow.on('closed',  () => {
     mainWindow = null
   })
+
   // secWindow.on('closed',  () => {
   //   secWindow = null
   // })

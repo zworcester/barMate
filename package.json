@@ -1,23 +1,26 @@
 {
-  "name": "barmate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zworcester/barMate.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zworcester/barMate/issues"
-  },
-  "homepage": "https://github.com/zworcester/barMate#readme",
-  "devDependencies": {
-    "electron": "^21.1.0"
-  }
+    "name": "master-electron",
+    "version": "1.0.0",
+    "description": "Master Electron Course Code",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "watch": "nodemon --exec electron .",
+        "reseat": "git reset --hard"
+    },
+    "repository": "https://github.com/stackacademytv/master-electron",
+    "keywords": [
+        "Electron",
+        "Master Electron",
+        "demo"
+    ],
+    "author": "GitHub, Stackacademytv",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "^20.1.3",
+        "nodemon": "^2.0.0"
+    },
+    "dependencies": {
+        "electron-window-state": "^5.0.3"
+    }
 }

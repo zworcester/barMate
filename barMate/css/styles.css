@@ -1,0 +1,147 @@
+body {
+    background-color: #a29789;
+}
+
+nav {
+    background-color: black;
+    color: #ebc43b;
+
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.form-outline {
+    width: 90%;
+    padding-right: 50px;
+    padding-left: 80px;
+    color:#ebc43b;
+
+}
+.form-control {
+    background-color: #13120b;
+    color:#ebc43b;
+    border-radius: 50px;
+    padding: 30px;
+    margin-left: 20px;
+}
+
+.form-control:focus{
+    background-color: #13120b;
+    color:#ebc43b;
+}
+
+.list {
+    margin: 0 100px;
+    padding-right: 350px;
+    padding-bottom: 500px;
+    background-color: #13120b;
+    border-radius: 30px;
+    position: fixed;
+    right: 0;
+    bottom: 90px;
+}
+
+.list ul {
+    padding-top: 32px;
+    padding-left: 40px;
+}
+
+.list h1 {
+    padding-top: 1px;
+    font-size: 2rem;
+}
+
+
+.navbar-brand {
+    color: #ebc43b;
+}
+.nav-link {
+    color: #fce38a;
+    margin-left: 100px;
+}
+
+
+h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    opacity: 80%;
+}
+
+input{    
+    font-size: 50px;
+    padding-left:25px;
+    }
+
+li {
+        color: #ebc43b;
+    }
+    
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+title{
+    color: #fce38a;
+    color: #13120b;
+    color: #a6a6a6;
+    color: #725f1a;
+    color: #7c8489;
+}
+
+#mg {
+    position: relative;
+    z-index: 1;
+    left: -225px;
+    top: 1px;
+    color: #ebc43b;
+    cursor: pointer;
+    width: 0;
+  }
+
+  .box{
+	display: flex;
+	align-items: center;
+	padding: 20px;
+
+}
+
+.box > i {
+
+	font-size: 20px;
+	color: #ebc43b;
+
+}
+
+.box > input{
+	flex: 1;
+	height: 40px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	padding-right: 10px;
+
+}
+
+/*#fce38a, #13120b, #000000, #a6a6a6, #725f1a and ##7c8489*/
