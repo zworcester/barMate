@@ -98,17 +98,27 @@
                         <div class="ingredientTableInput">ABV (%)</div>
                         <div class="ingredientTableInput">Volume (Oz)</div>
                     </div>
-                    <div class="d-flex flex-row" name="ing_row">
-                        <form onsubmit="return false" id="default">
-                            <div class="input-group">
-                                <input style="width:100%;" class="inputWidth ingredientTableInput" title="Name" placeholder="Name" type="text" name="name">
-                                <input class="inputWidth ingredientTableInput" title="ABV (%)" placeholder="ABV (%)" type="number" name="abv">
-                                <input class="inputWidth ingredientTableInput" title="Volume (Oz)" placeholder="Volume (Oz)" type="number" name="volume">
+                    <div name="ing_row" id="ingredients-row">
 
-                        </form>
-                        </div>
                     </div>
+                    <script>
+                            ing_area = document.getElementById("ingredients-row");
+
+                            ings = temp_data_handler.getIngredients();
+
+                            if (ings != null){
+                                for (var i in ings)
+                                {
+                                    abv = ings[i][0].toFixed(2);
+                                    ratio = ings[i][1].toFixed(2);
+
+                                    ing_area.innerHTML += "<div class=\"d-flex flex-row bd-highlight mb-3\" id=\"" + i.toString() + "\"><div class=\"p-2 flex-fill bd-highlight\" name=\"name\">" + i + "</div><div class=\"p-2 flex-fill bd-highlight\" name=\"abv\">" + abv.toString() + "</div><div class=\"p-2 flex-fill bd-highlight\" name=\"ratio\">" + ratio.toString() + "</div>";
+                                }
+
+                            }
+                        </script>
                 </div>
+            </div>
                 <div class="saveBox">
                     <div class="save-Button">
                         <button type="button" id="save-button">SAVE</button>

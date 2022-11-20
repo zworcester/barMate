@@ -37,18 +37,18 @@ class tempCocktailDataHandler{
     }
 
     setIngredients(ingredients){
-        localStorage.setItem("temp_cocktail_ingredients", ingredients);
+        localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(ingredients));
     }
 
     addIngredient(name, abv, ratio){
-        new_ings = localStorage.getItem("temp_cocktail_ingredients");
+        new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
         new_ings += { name : [abv, ratio] };
 
-        localStorage.setItem("temp_cocktail_ingredients", new_ings);
+        localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(new_ings));
     }
 
     getIngredients(){
-        return localStorage.getItem("temp_cocktail_ingredients");
+        return JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
     }
 
     setCocktail(cocktail_index){
