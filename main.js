@@ -1,5 +1,5 @@
 // Modules
-const {app, BrowserWindow, webContents, session, dialog, globalShortcut, Menu, MenuItem} = require('electron')
+const {app, BrowserWindow, webContents, session, dialog, globalShortcut, Menu, MenuItem, ipcMain} = require('electron')
 
 
 
@@ -39,7 +39,6 @@ function createWindow () {
     }
   })
 
-
   // secWindow = new BrowserWindow({
   //   width: 800, height: 600,
   //   x: 200, y: 200,
@@ -54,7 +53,6 @@ function createWindow () {
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadFile('./refactoredCode/builder.html')
-
 
 
  mainWindow.webContents.openDevTools()
@@ -159,7 +157,6 @@ function createWindow () {
 
 
 
-
 // Electron `app` is ready
 app.on('ready', createWindow)
 
@@ -172,3 +169,4 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (mainWindow === null) createWindow()
 })
+

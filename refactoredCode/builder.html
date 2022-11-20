@@ -15,6 +15,7 @@
     <script src="inject_ingredient_field.js"></script>
     <script src="temp_cocktail_data_handler.js"></script>
     <script>
+
         ingredients_injector = new ingredient_field_injector("ing_box");
         temp_data_handler = new tempCocktailDataHandler();
     </script>
@@ -56,6 +57,8 @@
         </div>
     </section>
 
+    <div id="refresh" class="refreshInvis"></div>
+
     <!-- --------------------- Side Menu Icons --------------------------  -->
     <ul class="nav stickyRight-o flex-column">
         <li class="nav-item">
@@ -93,10 +96,10 @@
                 </div>
                 <div class="ingredientBox" id="ing_box">
                     <h2><u>Ingredients</u></h2>
-                    <div class="d-flex flex-row" name="ing_row">
-                        <div class="ingredientTableInput">Name</div>
-                        <div class="ingredientTableInput">ABV (%)</div>
-                        <div class="ingredientTableInput">Volume (Oz)</div>
+                    <div class="ingredientsGrid" name="ing_row">
+                        <div>Name</div>
+                        <div>ABV (%)</div>
+                        <div>Volume (Oz)</div>
                     </div>
                     <div name="ing_row" id="ingredients-row">
 
@@ -112,7 +115,7 @@
                                     abv = ings[i][0].toFixed(2);
                                     ratio = ings[i][1].toFixed(2);
 
-                                    ing_area.innerHTML += "<div class=\"d-flex flex-row bd-highlight mb-3\" id=\"" + i.toString() + "\"><div class=\"p-2 flex-fill bd-highlight\" name=\"name\">" + i + "</div><div class=\"p-2 flex-fill bd-highlight\" name=\"abv\">" + abv.toString() + "</div><div class=\"p-2 flex-fill bd-highlight\" name=\"ratio\">" + ratio.toString() + "</div>";
+                                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i + "\'); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
                                 }
 
                             }

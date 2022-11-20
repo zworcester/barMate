@@ -41,9 +41,15 @@ class tempCocktailDataHandler{
     }
 
     addIngredient(name, abv, ratio){
-        new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
-        new_ings += { name : [abv, ratio] };
+        let new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
+        new_ings[name] = [abv,ratio];
 
+        localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(new_ings));
+    }
+
+    removeIngredient(name){
+        let new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
+        delete new_ings[name];
         localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(new_ings));
     }
 
