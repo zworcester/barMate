@@ -15,6 +15,12 @@
     <script src="inject_ingredient_field.js"></script>
     <script src="temp_cocktail_data_handler.js"></script>
     <script>
+        function plusButton() {
+            document.getElementById("new_ingredient_form").style.display = "block";
+            document.getElementById("plus-button").disabled = true;
+            document.getElementById("plus-button").style.opacity = .3;
+            console.log("plus button pressed");
+        }
 
         ingredients_injector = new ingredient_field_injector("ing_box");
         temp_data_handler = new tempCocktailDataHandler();
@@ -92,9 +98,10 @@
             <!-- Ingredient columns -->
             <div class="col">
                 <div class="plus-Button">
-                    <button type="button" onclick="ingredients_injector.new_field(event);" id="plus-button">+</button>
+                    <button type="button" onclick="plusButton();" id="plus-button">+</button>
                 </div>
                 <div class="ingredientBox" id="ing_box">
+                <div class="d-flex flex-row" name="ing_row" id="new_ingredient_form" style="display:none !important"><form><div class="input-group"><input style="width:100%" class="ingredientTableInput" title="Name" placeholder="Name" type="text" name="name"><input class="ingredientTableInput" title="ABV (%)" placeholder="ABV (%)" type="number" name="abv"><input class="ingredientTableInput" title="Volume (Oz)" placeholder="Volume (Oz)"  type="number" name="volume"></form></div></div>
                     <h2><u>Ingredients</u></h2>
                     <div class="ingredientsGrid" name="ing_row">
                         <div>Name</div>
