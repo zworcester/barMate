@@ -32,6 +32,26 @@
             document.getElementById("plus-button").style.opacity = 1;
         }
 
+// function keyup(e) {
+//     var inputValue = document.querySelector('#ABV').value;
+//
+//     console.log('this is my value: ' + inputValue);
+//     var ABVCont = document.querySelector('#myBar');
+//
+//     if (inputValue === '') {
+//         ABVCont.style.width = 0 + "%";
+//     } else {
+//         ABVCont.style.width = inputValue + "%";
+//
+//     }
+//
+//
+// }
+
+        function updateBar(){
+
+        }
+
         function saveEdit(){
             const name_IN = document.getElementById("name-input").value;
             const abv_IN = document.getElementById("abv-input").value;
@@ -260,8 +280,8 @@
                 <div class="boxABV">
                     <h2>Content</h2>
                     <form onSubmit="return false;">
-                        <label for="ABV">ABV%</label>
-                        <input title="ABV" type="text" id="ABV" name="ABV">
+                        <label for="ABV">ABV: </label>
+                        <p title="ABV" type="text" id="ABV" name="ABV">0%</p>
                     </form>
 
                     <div id="myProgress">

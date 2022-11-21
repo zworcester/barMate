@@ -70,23 +70,23 @@ var loadFile = function(event) {
 // });
 
 //**************** Function to increase ABV Content Bar *****************
-window.onkeyup = keyup;
-
-function keyup(e) {
-    var inputValue = document.querySelector('#ABV').value;
-
-    console.log('this is my value: ' + inputValue);
-    var ABVCont = document.querySelector('#myBar');
-
-    if (inputValue === '') {
-        ABVCont.style.width = 0 + "%";
-    } else {
-        ABVCont.style.width = inputValue + "%";
-
-    }
-
-
-}
+// window.onkeyup = keyup;
+//
+// function keyup(e) {
+//     var inputValue = document.querySelector('#ABV').value;
+//
+//     console.log('this is my value: ' + inputValue);
+//     var ABVCont = document.querySelector('#myBar');
+//
+//     if (inputValue === '') {
+//         ABVCont.style.width = 0 + "%";
+//     } else {
+//         ABVCont.style.width = inputValue + "%";
+//
+//     }
+//
+//
+// }
 
 
 
