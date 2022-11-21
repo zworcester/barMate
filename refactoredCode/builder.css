@@ -148,11 +148,6 @@ input[type=file] {
 }
 
 
-/*-------------------------------OTHER---------------------------------------*/
-.refreshInvis{
-    visibility: hidden;
-}
-
 /*-------------------------Side Menu Icons ----------------------------------*/
 
 
@@ -367,9 +362,9 @@ input[type=file] {
 
 .plus-Button {
     visibility: hidden;
-    position: absolute;
+    position: relative;
     display: flex;
-    justify-content: right;
+    justify-content: space-evenly;
     overflow: hidden;
     z-index: 100;
 }
@@ -383,9 +378,9 @@ input[type=file] {
     font-size: 1em;
     font-weight: 500;
     box-shadow: inset 0 0 6px 4px #0000000d;
-    background: linear-gradient(0deg, #ff5acd, #ff5acd);
+    background: linear-gradient(-315deg, #252523, #252425);
     /* background: linear-gradient(-315deg, #252523, #252425); */
-    color: #fff;
+    color: #ff5acd;
     cursor: pointer;
     position: relative;
     top: 0;
@@ -419,21 +414,6 @@ input[type=file] {
     overflow: auto;
 }
 
-.ingredientsGrid {
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    gap: 5px 5px;
-}
-
-.ingredientsTrash{
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border: none;
-    background: url("../images/icons8-trash-can.svg") center no-repeat;
-    background-size: cover;
-}
-
 
 /*------------------------ ingredientBox ----------------------*/
 
@@ -456,39 +436,6 @@ input[type=file] {
     border-bottom-left-radius: 0.2rem !important;
     border-top-right-radius: 0.2em !important;
     border-bottom-right-radius: 0.2rem !important;
-}
-
-.ingredientTableButton {
-    display: flex;
-    justify-items: right;
-    justify-content: center;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 0.25rem;
-    margin-bottom: 1px;
-    background: #252523;
-    border-color: rgba(255, 0, 0, 0);
-    /* border: none; */
-    color: white;
-    border-top-left-radius: 0.2rem !important;
-    border-bottom-left-radius: 0.2rem !important;
-    border-top-right-radius: 0.2em !important;
-    border-bottom-right-radius: 0.2rem !important;
-}
-
-.ingredientTableButton button {
-    padding: 10px 30px;
-    overflow: hidden;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    font-weight: 500;
-    background: linear-gradient(-315deg, #252523, #252425);
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    top: 0;
 }
 
 form {
@@ -517,7 +464,8 @@ form {
     color: #ff5acd;
     padding: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
     align-items: center;
     min-height: 20%;
     max-height: 500px;
@@ -531,12 +479,11 @@ form {
     overflow: auto;
 }
 
-
 .save-Button {
     visibility: hidden;
-    position: absolute;
+    position: relative;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     overflow: hidden;
     z-index: 100;
 }

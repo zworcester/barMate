@@ -69,25 +69,79 @@ var loadFile = function(event) {
 
 // });
 
-//**************** Function to increase ABV Content Bar *****************
-// window.onkeyup = keyup;
-//
-// function keyup(e) {
-//     var inputValue = document.querySelector('#ABV').value;
-//
-//     console.log('this is my value: ' + inputValue);
-//     var ABVCont = document.querySelector('#myBar');
-//
-//     if (inputValue === '') {
-//         ABVCont.style.width = 0 + "%";
-//     } else {
-//         ABVCont.style.width = inputValue + "%";
-//
-//     }
-//
-//
-// }
+//******************* Animation Guy Pour Beer ******************//
 
+var container = document.getElementById('a-c');
+var counter = 0;
+var ready = false;
+
+var lottieAnimation = lottie.loadAnimation({
+    container: container,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: './guyPourBeerFinal.json'
+});
+
+lottieAnimation.addEventListener("DOMLoaded", () => {
+    ready = true;
+    lottieAnimation.goToAndPlay('high', false);
+    lottieAnimation.goToAndPlay('mid', false);
+    lottieAnimation.goToAndPlay('low', false);
+});
+
+
+//**************** Function to increase ABV Content Bar *****************
+window.onkeyup = keyup;
+
+function keyup(e) {
+    var inputValue = document.querySelector('#ABVTotal').value;
+
+    inputValue = calculatingABV();
+    // [].forEach.call(document.querySelectorAll('#ABVTotal'), function(el) {
+    //     el.value = calculatingABV();
+    // });
+    document.getElementById('ABVTotal').value = inputValue;
+
+    console.log('this is my value: ' + inputValue);
+    var ABVCont = document.querySelector('#myBar');
+
+    if (inputValue === '') {
+        ABVCont.style.width = 0 + "%";
+    } else {
+        ABVCont.style.width = inputValue + "%";
+
+    }
+    if (ready) {
+        if (inputValue <= 10) {
+            lottieAnimation.goToAndPlay('low', true);
+            lottieAnimation.loop = true;
+        } else if (inputValue >= 11 && inputValue <= 80) {
+            lottieAnimation.goToAndPlay('mid', true);
+        } else {
+            lottieAnimation.goToAndPlay('high', true);
+        }
+
+    }
+
+
+}
+
+
+
+//**************** ABV function *****************
+
+function calculatingABV() {
+    var abv = document.getElementById("abvCont").value;
+    var vol = document.getElementById("volCont").value;
+
+    var result = (abv * vol);
+
+    console.log("abvCont = " + JSON.stringify(abv));
+    console.log("volCont = " + vol);
+    console.log("this is where we calculate ABV: " + result);
+    return result;
+}
 
 
 //**************** Functions For Edit Button *****************
