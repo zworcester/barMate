@@ -1,0 +1,599 @@
+[
+    {
+        "Name": "Light rum",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Applejack",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Gin",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Dark rum",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sweet Vermouth",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Strawberry schnapps",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Scotch",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Apricot brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Triple sec",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Southern Comfort",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Orange bitters",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lemon vodka",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Blended whiskey",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Dry Vermouth",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Amaretto",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Tea",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Champagne",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Coffee liqueur",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Bourbon",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Tequila",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Vodka",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Añejo rum",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Bitters",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sugar",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Kahlua",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "demerara Sugar",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Dubonnet Rouge",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Watermelon",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lime juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Irish whiskey",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Apple brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Carbonated water",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cherry brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Creme de Cacao",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Grenadine",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Port",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Coffee brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Red wine",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Rum",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Grapefruit juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Ricard",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sherry",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cognac",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sloe gin",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Apple juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Pineapple juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lemon juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sugar syrup",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Milk",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Strawberries",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Chocolate syrup",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Yoghurt",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Mango",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Ginger",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lime",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cantaloupe",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Berries",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Grapes",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Kiwi",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Tomato juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cocoa powder",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Chocolate",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Heavy cream",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Galliano",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Peach Vodka",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Ouzo",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Coffee",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Spiced rum",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Water",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Espresso",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Angelica root",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Orange",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cranberries",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Johnnie Walker",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Apple cider",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Everclear",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cranberry juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Egg yolk",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Egg",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Grape juice",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Peach nectar",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lemon",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Firewater",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lemonade",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Lager",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Whiskey",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Absolut Citron",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Pisco",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Irish cream",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Ale",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Chocolate liqueur",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Midori melon liqueur",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sambuca",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Cider",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Sprite",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "7-Up",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Blackberry brandy",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Peppermint schnapps",
+        "ImgSrc": "",
+        "Description": "",
+        "Class": []
+    },
+    {
+        "Name": "Creme de Cassis"
+    }
+]
