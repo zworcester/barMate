@@ -10,6 +10,7 @@ class tempCocktailDataHandler{
         localStorage.removeItem("temp_cocktail_image");
         localStorage.removeItem("temp_cocktail_ingredients");
         localStorage.removeItem("temp_cocktail_edit");
+        localStorage.removeItem("temp_cocktail_which");
     }
 
     setName(name){
@@ -42,6 +43,9 @@ class tempCocktailDataHandler{
 
     addIngredient(name, abv, ratio){
         let new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
+        if (new_ings == null){
+            new_ings = {};
+        }
         new_ings[name] = [abv,ratio];
 
         localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(new_ings));
@@ -49,6 +53,11 @@ class tempCocktailDataHandler{
 
     removeIngredient(name){
         let new_ings = JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
+        if (new_ings == null){
+            localStorage.setItem("temp_cocktail_ingredients", "{}");
+            return;
+        }
+
         delete new_ings[name];
         localStorage.setItem("temp_cocktail_ingredients", JSON.stringify(new_ings));
     }
@@ -63,6 +72,14 @@ class tempCocktailDataHandler{
 
     getCocktail(){
         return localStorage.getItem("temp_cocktail_edit");
+    }
+
+    setWhich(which){
+        localStorage.setItem("temp_cocktail_which", which);
+    }
+
+    getWhich(){
+        return localStorage.getItem("temp_cocktail_which");
     }
 
 

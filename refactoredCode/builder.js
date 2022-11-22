@@ -48,9 +48,11 @@ function myFunction() {
 //**************** Function for replacing Image  *****************
 var oldImg = document.getElementsByClassName("oldImg");
 
-var loadFile = function(event) {
+var loadFile = function(event, tempDataHandler) {
     var image = document.getElementById('oldImg');
     image.src = URL.createObjectURL(event.target.files[0]);
+    console.log(event.target.files);
+    tempDataHandler.setImage(event.target.files[0].path);
 };
 
 // var ABVContent = document.getElementById('ABV').on('keyup', function() {
@@ -169,10 +171,10 @@ function delay(time) {
 
 
 //**************** Toast function *****************
-document.getElementById("save-button").onclick = function() {
+/*document.getElementById("save-button").onclick = function() {
     var toastElList = [].slice.call(document.querySelectorAll('.toast'))
     var toastList = toastElList.map(function(toastEl) {
         return new bootstrap.Toast(toastEl)
     })
     toastList.forEach(toast => toast.show())
-}
+}*/

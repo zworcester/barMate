@@ -12,7 +12,7 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6092e90ed9.js" crossorigin="anonymous"></script>
-    <script src="inject_ingredient_field.js"></script>
+    <script src="cocktail_reader_writer.js"></script>
     <script src="temp_cocktail_data_handler.js"></script>
     <script>
         function plusButton() {
@@ -30,6 +30,70 @@
             document.getElementById("new_ingredient_form").style.setProperty('display', 'none', 'important');
             document.getElementById("plus-button").disabled = false;
             document.getElementById("plus-button").style.opacity = 1;
+        }
+
+        function saveButton(){
+            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+
+            let SAVE_NAME = temp_data_handler.getName();
+            let SAVE_DESC = temp_data_handler.getDescription();
+            let SAVE_IMG = temp_data_handler.getImage();
+            let SAVE_INGS = temp_data_handler.getIngredients();
+
+            for (ing in SAVE_INGS)
+            {
+                SAVE_INGS[ing][0] = Number(SAVE_INGS[ing][0]);
+                SAVE_INGS[ing][1] = Number(SAVE_INGS[ing][1]);
+            }
+
+            if(SAVE_NAME == null || SAVE_NAME == "")
+            {
+                alert("Name field cannot be empty.\nPlease give your cocktail a name!");
+
+                return;
+            }
+
+            if (SAVE_DESC == null)
+            {
+                SAVE_DESC = "";
+            }
+
+            if (SAVE_IMG == null)
+            {
+                SAVE_IMG = "";
+            }
+
+            if (SAVE_INGS == null)
+            {
+                SAVE_INGS = {};
+            }
+
+
+            // This route is followed if we are making a new cocktail
+            if (temp_data_handler.getWhich() == null || temp_cocktail_data_handler.getWhich() < 0)
+            {
+                let new_img_name = path.basename(SAVE_IMG);
+
+                if (SAVE_IMG != "" && !fs.existsSync("refactoredCode/data/images/" + new_img_name) && SAVE_IMG != "refactoredCode/data/images/" + new_img_name)
+                {
+                    fs.copyFile(SAVE_IMG, "refactoredCode/data/images/" + new_img_name, (err) => {
+                        if (err) throw err;
+                        console.log(SAVE_IMG + ' was copied to refactoredCode/data/images/' + new_img_name);
+                    });
+                }
+
+                cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, new_img_name, SAVE_INGS);
+            }
+            else
+            {
+
+            }
+
+            cocktail_writer.writeToFile();
+
+            return 42;
+
+
         }
 
         function updateBar(){
@@ -102,7 +166,6 @@
 
         }
 
-        ingredients_injector = new ingredient_field_injector("ing_box");
         temp_data_handler = new tempCocktailDataHandler();
     </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
@@ -211,7 +274,7 @@
             </div>
                 <div class="saveBox">
                     <div class="save-Button">
-                        <button type="button" id="save-button">SAVE</button>
+                        <button type="button" id="save-button" onclick="saveButton();">SAVE</button>
                     </div>
                 </div>
 
