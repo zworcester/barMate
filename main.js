@@ -52,7 +52,7 @@ function createWindow () {
   //console.log(Object.is(ses, customSes))
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadFile('./refactoredCode/builder.html')
+  mainWindow.loadFile('./refactoredCode/index.html')
 
 
  mainWindow.webContents.openDevTools()
