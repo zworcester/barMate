@@ -32,28 +32,37 @@
             document.getElementById("plus-button").style.opacity = 1;
         }
 
-// function keyup(e) {
-//     var inputValue = document.querySelector('#ABV').value;
-//
-//     console.log('this is my value: ' + inputValue);
-//     var ABVCont = document.querySelector('#myBar');
-//
-//     if (inputValue === '') {
-//         ABVCont.style.width = 0 + "%";
-//     } else {
-//         ABVCont.style.width = inputValue + "%";
-//
-//     }
-//
-//
-// }
-
         function updateBar(){
+            abvBar = document.getElementById("myBar");
+
+            ingredients = temp_data_handler.getIngredients();
+
+            if (ingredients == null || Object.keys(ingredients).length === 0){
+                document.getElementById("ABV").innerHTML = "&nbsp;0%";
+                abvBar.style.width = 0 + "%";
+
+                return;
+            }
+
+            let content_volume = 0;
+            let total_volume = 0;
+
+            for (ing in ingredients){
+                content_volume += Number(ingredients[ing][0]) * Number(ingredients[ing][1]);
+                total_volume += Number(ingredients[ing][1]);
+            }
+            console.log(content_volume);
+            console.log(total_volume);
+
+            document.getElementById("ABV").innerHTML = "&nbsp;" + Number(content_volume/total_volume).toFixed(2).toString() + "%";
+            abvBar.style.width = Number(content_volume/total_volume).toFixed(2).toString() + "%";
+
+            return;
 
         }
 
         function saveEdit(){
-            const name_IN = document.getElementById("name-input").value;
+            const name_IN = document.getElementById("name-input").value.replaceAll("\'","").replaceAll("\"", "");
             const abv_IN = document.getElementById("abv-input").value;
             const ratio_IN = document.getElementById("ratio-input").value;
 
@@ -81,7 +90,7 @@
             temp_data_handler.addIngredient(name_IN, Number(abv_IN).toFixed(2), Number(ratio_IN).toFixed(2));
             let ing_area = document.getElementById("ingredients-row");
 
-            ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + name_IN + "\"><div name=\"name\">" + name_IN + "</div><div name=\"abv\">" + Number(abv_IN).toFixed(2).toString() + "</div><div name=\"ratio\">" + Number(ratio_IN).toFixed(2).toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + name_IN + "\'); document.getElementById(\'" + name_IN + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
+            ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + name_IN + "\"><div name=\"name\">" + name_IN + "</div><div name=\"abv\">" + Number(abv_IN).toFixed(2).toString() + "</div><div name=\"ratio\">" + Number(ratio_IN).toFixed(2).toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + name_IN + "\'); document.getElementById(\'" + name_IN + "\').remove(); updateBar();\" class=\"ingredientsTrash\"></button></div>";
 
             document.getElementById("name-input").value = "";
             document.getElementById("abv-input").value = "";
@@ -172,7 +181,7 @@
                     <button type="button" onclick="plusButton();" id="plus-button">+</button>
                 </div>
                 <div class="ingredientBox" id="ing_box">
-                <div class="d-flex flex-row" name="ing_row" id="new_ingredient_form" style="display:none !important"><form><div class="input-group"><input id="name-input" style="width:100%" class="ingredientTableInput" title="Name" placeholder="Name" type="text" name="name"><input id="abv-input" class="ingredientTableInput" title="ABV (%)" placeholder="ABV (%)" type="number" name="abv"><input id= "ratio-input" class="ingredientTableInput" title="Volume (Oz)" placeholder="Volume (Oz)"  type="number" name="volume"></form></div><button class="ingredientTableButton" onclick="cancelEdit();">Cancel</button><button class="ingredientTableButton" onclick="saveEdit();">Save</button></div>
+                <div class="d-flex flex-row" name="ing_row" id="new_ingredient_form" style="display:none !important"><form><div class="input-group"><input id="name-input" style="width:100%" class="ingredientTableInput" title="Name" placeholder="Name" type="text" name="name"><input id="abv-input" class="ingredientTableInput" title="ABV (%)" placeholder="ABV (%)" type="number" name="abv"><input id= "ratio-input" class="ingredientTableInput" title="Volume (Oz)" placeholder="Volume (Oz)"  type="number" name="volume"></form></div><button class="ingredientTableButton" onclick="cancelEdit();">Cancel</button><button class="ingredientTableButton" onclick="saveEdit(); updateBar();">Save</button></div>
                     <h2><u>Ingredients</u></h2>
                     <div class="ingredientsGrid" name="ing_row">
                         <div>Name</div>
@@ -187,13 +196,13 @@
 
                             ings = temp_data_handler.getIngredients();
 
-                            if (ings != null){
+                            if (ings != null && ings != {}){
                                 for (var i in ings)
                                 {
-                                    abv = ings[i][0].toFixed(2);
-                                    ratio = ings[i][1].toFixed(2);
+                                    abv = Number(ings[i][0]).toFixed(2);
+                                    ratio = Number(ings[i][1]).toFixed(2);
 
-                                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i + "\'); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
+                                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i.toString() + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i.toString() + "\'); updateBar(); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
                                 }
 
                             }
@@ -281,14 +290,16 @@
                     <h2>Content</h2>
                     <form onSubmit="return false;">
                         <label for="ABV">ABV: </label>
-                        <p title="ABV" type="text" id="ABV" name="ABV">0%</p>
+                        <div title="ABV" id="ABV" name="ABV">&nbsp;0%</div>
                     </form>
 
                     <div id="myProgress">
                         <div id="myBar"></div>
 
                     </div>
-
+                    <script>
+                        updateBar();
+                    </script>
                 </div>
 
 
