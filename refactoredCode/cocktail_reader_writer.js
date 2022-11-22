@@ -80,37 +80,6 @@ class CocktailReaderWriter{
         this.document.cocktails.splice(index, 1);
     }
 
-    // Replace an cocktail in memory with the supllied cocktail. This will replace all cocktails that share a name.
-    // Returns true if the requested cocktail exists, else returns false.
-    /*
-    modifyCocktail(name, cocktail) {
-        if (name in this.document.cocktails){
-            if (name != cocktail.name) {
-                delete this.document.cocktails[name];
-            }
-
-            this.document.cocktails[name] = cocktail;
-
-            return true;
-        }
-
-        return undefined;
-    }
-
-    addCocktail(cocktail) {
-        this.docuement.cocktails[cocktail.name] = cocktail;
-    }
-
-    deleteCocktail(name) {
-        if (name in this.document.cocktails) {
-            delete this.document.cocktails[name]
-
-            return true;
-        }
-
-        return undefined;
-    } */
-
     writeToFile() {
         fs.writeFileSync(path.join(__dirname, this.file_path), JSON.stringify(this.document));
     }

@@ -29,7 +29,7 @@ class CocktailCard{
 		return (content_volume / total_volume).toPrecision(4);
 	}
 
-	getCard(){
+	getCard(idx){
 		let ingredients_string = "";
 
 		const nuImg = path.join(__dirname, this.image);
@@ -38,7 +38,7 @@ class CocktailCard{
 			ingredients_string += ("<tr><th>" + ing + "</th><th>ABV: " + this.ingredients[ing][0] + "</th><th>Ratio: " + this.ingredients[ing][1] + "</th></tr>");
 		}
 
-	return "<div class=\"col\"><div class=\"card\" id=\"card-" + this.name + "\"><div class=\"img-box\"><img src=\"" + nuImg + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>" + this.getABV() + "% ABV</span></h2><div class=\"data\" style=\"text-align: center\"><span style=\"color:black\">" + this.description + "</span></div><div class =\"action-Button\"><button onmouseleave=\"revertStyle()\" onclick=\"changeStyle()\">Edit</button><script>\nfunction changeStyle(){\n\tvar element = document.getElementById(\"card-" + this.name + "\");\n\telement.style.paddingBottom = \"500px\";\n}\nfunction revertStyle(){\n\tvar element= document.getElementbyId(\"card-" + this.name + "\");\n\telement.style.padding=\"200px\";\n}</script><button>View</button></div></div></div></div></div>";
+	return "<div class=\"col\"><div class=\"card\" id=\"card-" + this.name + "\"><div class=\"img-box\"><img src=\"" + nuImg + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>" + this.getABV() + "% ABV</span></h2><div class=\"data\" style=\"text-align: center\"><span style=\"color:black\">" + this.description + "</span></div><div class =\"action-Button\"><button>Edit</button><button><a name=\"link\" id=\""+ idx + "\" href=\"javascript:localStorage.setItem(\'temp_cocktail_which\', " + idx + ");window.location=\'builder.html\'\">View</a></button></div></div></div></div></div>";
 	}
 
 };
@@ -62,7 +62,7 @@ class CocktailCards{
 		for (let x = 0; x < this.cocktail_object.size(); ++x){
 			let cocktailCard = new CocktailCard(this.cocktail_object.getCocktail(x));
 
-			cardgrid.innerHTML += cocktailCard.getCard();
+			cardgrid.innerHTML += cocktailCard.getCard(x);
 		}
 	}
 

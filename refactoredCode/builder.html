@@ -108,14 +108,24 @@
                 }
 
                 cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, "data/images/" + new_img_name, SAVE_INGS);
+
+                alert("New cocktail saved!");
             }
             else
             {
+                let new_img_name = path.basename(SAVE_IMG);
 
+                if (SAVE_IMG != "" && !fs.existsSync("refactoredCode/data/images/" + new_img_name) && SAVE_IMG != "refactoredCode/data/images/" + new_img_name)
+                {
+                    fs.copyFile(SAVE_IMG, "refactoredCode/data/images/" + new_img_name, (err) => {
+                        if (err) throw err;
+                        console.log(SAVE_IMG + ' was copied to refactoredCode/data/images/' + new_img_name);
+                    });
+                }
+
+                cocktail_writer.modifyCocktail(Number(temp_data_handler.getWhich()), SAVE_NAME, SAVE_DESC, "data/images/" + new_img_name, SAVE_INGS);
+                alert("Cocktail modified!");
             }
-
-            alert("New cocktail saved!");
-
 
             cocktail_writer.writeToFile();
             revert();
@@ -241,6 +251,10 @@
         }
 
         temp_data_handler = new tempCocktailDataHandler();
+        if (temp_data_handler.getWhich() != null)
+        {
+            changeCocktail(temp_data_handler.getWhich());
+        }
     </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="builder.css">
@@ -316,6 +330,7 @@
                     }
                     else
                     {
+                        console.log("test");
                         temp_data_handler.resetAllFields();
                     }
 
