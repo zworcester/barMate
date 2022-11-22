@@ -230,6 +230,28 @@ input[type=file] {
 
 /*-------------------------CONTAINER ----------------------------------*/
 
+/*-***********************************Selector ****************************-*/
+
+.selectCocktail {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    margin-bottom:45px;
+    border-radius: 5px;
+}
+
+.selectCocktail select{
+    color: #ff5acd;
+    padding: 1px;
+    /* background: #1816160a; */
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 0px 8px;
+    overflow: auto;
+}
+
 
 /*-***********************************Edit Button *************************-*/
 

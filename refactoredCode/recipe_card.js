@@ -32,7 +32,7 @@ class CocktailCard{
 	getCard(){
 		let ingredients_string = "";
 
-		const nuImg = path.join(__dirname, 'data', 'images', this.image);
+		const nuImg = path.join(__dirname, this.image);
 
 		for (const ing in this.ingredients){
 			ingredients_string += ("<tr><th>" + ing + "</th><th>ABV: " + this.ingredients[ing][0] + "</th><th>Ratio: " + this.ingredients[ing][1] + "</th></tr>");

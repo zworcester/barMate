@@ -9,7 +9,6 @@ class tempCocktailDataHandler{
         localStorage.removeItem("temp_cocktail_description");
         localStorage.removeItem("temp_cocktail_image");
         localStorage.removeItem("temp_cocktail_ingredients");
-        localStorage.removeItem("temp_cocktail_edit");
         localStorage.removeItem("temp_cocktail_which");
     }
 
@@ -66,12 +65,12 @@ class tempCocktailDataHandler{
         return JSON.parse(localStorage.getItem("temp_cocktail_ingredients"));
     }
 
-    setCocktail(cocktail_index){
-        localStorage.setItem("temp_cocktail_edit", cocktail_index);
-    }
-
-    getCocktail(){
-        return localStorage.getItem("temp_cocktail_edit");
+    setCocktail(which, cocktail){
+        this.setName(cocktail.name);
+        this.setDescription(cocktail.description);
+        this.setImage(cocktail.image);
+        this.setIngredients(cocktail.ingredients);
+        this.setWhich(which);
     }
 
     setWhich(which){

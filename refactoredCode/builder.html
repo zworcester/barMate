@@ -22,6 +22,24 @@
             console.log("plus button pressed");
         }
 
+        function changeCocktail(which) {
+            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+            temp_data_handler.resetAllFields();
+
+            temp_data_handler.setCocktail(which, cocktail_writer.getCocktail(which));
+
+        }
+
+        function updateCocktailList() {
+            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+            const select = document.getElementById("cocktail_select");
+            select.innerHTML = "<option value=\"-1\">New Cocktail</option>"
+
+            for(let i = 0; i < cocktail_writer.size(); ++i){
+                select.innerHTML += "<option value=\"" + i.toString() + "\">" + cocktail_writer.getCocktail(i).name;
+            }
+        }
+
         function cancelEdit() {
             document.getElementById("name-input").value = "";
             document.getElementById("abv-input").value = "";
@@ -70,7 +88,7 @@
 
 
             // This route is followed if we are making a new cocktail
-            if (temp_data_handler.getWhich() == null || temp_cocktail_data_handler.getWhich() < 0)
+            if (temp_data_handler.getWhich() == null || temp_data_handler.getWhich() < 0)
             {
                 let new_img_name = path.basename(SAVE_IMG);
 
@@ -82,7 +100,7 @@
                     });
                 }
 
-                cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, new_img_name, SAVE_INGS);
+                cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, "data/images/" + new_img_name, SAVE_INGS);
             }
             else
             {
@@ -90,15 +108,59 @@
             }
 
             alert("New cocktail saved!");
-            cancelEdit();
-            revertBtn();
 
 
             cocktail_writer.writeToFile();
+            revert();
+
 
             return 42;
 
 
+        }
+
+        function revert()
+        {
+            cancelEdit();
+            revertBtn();
+            temp_data_handler.resetAllFields();
+            document.getElementById("name_textarea").value = temp_data_handler.getName();
+            document.getElementById("desc_textarea").value = temp_data_handler.getDescription();
+            updateImage();
+            updateIngredients();
+            updateBar();
+            updateCocktailList();
+        }
+
+        function updateIngredients()
+        {
+            let ing_area = document.getElementById("ingredients-row");
+            ing_area.innerHTML = "";
+
+            ings = temp_data_handler.getIngredients();
+
+            if (ings != null && ings != {}){
+                for (var i in ings)
+                {
+                    abv = Number(ings[i][0]).toFixed(2);
+                    ratio = Number(ings[i][1]).toFixed(2);
+
+                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i.toString() + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i.toString() + "\'); updateBar(); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
+                }
+
+            }
+        }
+
+        function updateImage(){
+            img_area = document.getElementById("oldImg");
+
+            if (temp_data_handler.getImage() != null){
+                img_area.src = temp_data_handler.getImage();
+            }
+            else
+            {
+                img_area.src = "images/null.png";
+            }
         }
 
         function updateBar(){
@@ -120,11 +182,11 @@
                 content_volume += Number(ingredients[ing][0]) * Number(ingredients[ing][1]);
                 total_volume += Number(ingredients[ing][1]);
             }
-            console.log(content_volume);
-            console.log(total_volume);
 
-            document.getElementById("ABV").innerHTML = "&nbsp;" + Number(content_volume/total_volume).toFixed(2).toString() + "%";
-            abvBar.style.width = Number(content_volume/total_volume).toFixed(2).toString() + "%";
+            let finalAnswer = (total_volume == 0) ? 0 : Number(content_volume/total_volume);
+
+            document.getElementById("ABV").innerHTML = "&nbsp;" + finalAnswer.toFixed(2) + "%";
+            abvBar.style.width = finalAnswer.toFixed(2) + "%";
 
             return;
 
@@ -232,6 +294,34 @@
 
     <div id="OverlayID" class="Overlay"></div>
     <div class="container">
+        <div class="selectCocktail">
+            <label for="cocktails">Cocktail:</label>
+            <select id="cocktail_select">
+            </select>
+            <script>
+                updateCocktailList();
+
+                document.getElementById('cocktail_select').onchange = (event) => {
+                    var value = Number(event.target.value);
+
+                    if (value >= 0){
+                        changeCocktail(value);
+                    }
+                    else
+                    {
+                        temp_data_handler.resetAllFields();
+                    }
+
+                    document.getElementById("name_textarea").value = temp_data_handler.getName();
+                    document.getElementById("desc_textarea").value = temp_data_handler.getDescription();
+                    updateImage();
+                    updateIngredients();
+                    updateBar();
+
+                }
+            </script>
+
+        </div>
         <div class="editBtn">
             <div class="mainMenu-Button">
                 <button id="btnColor" onclick="RemoveOverlay(); cancelEdit();">Edit</button>
@@ -260,21 +350,8 @@
 
                     </div>
                     <script>
-                            let ing_area = document.getElementById("ingredients-row");
-
-                            ings = temp_data_handler.getIngredients();
-
-                            if (ings != null && ings != {}){
-                                for (var i in ings)
-                                {
-                                    abv = Number(ings[i][0]).toFixed(2);
-                                    ratio = Number(ings[i][1]).toFixed(2);
-
-                                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i.toString() + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i.toString() + "\'); updateBar(); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
-                                }
-
-                            }
-                        </script>
+                            updateIngredients();
+                    </script>
                 </div>
             </div>
                 <div class="saveBox">
@@ -306,11 +383,7 @@
                         <label for="file">
                     <img src="./images/ingredientsImg.png" id="oldImg" alt="">
                     <script>
-                        img_area = document.getElementById("oldImg");
-
-                        if (temp_data_handler.getImage() != null){
-                            img_area.src = temp_data_handler.getImage();
-                        }
+                        updateImage();
                     </script>
                     </label>
 

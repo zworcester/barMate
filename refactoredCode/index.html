@@ -17,6 +17,14 @@
 </head>
 
 <body>
+    <script src="cocktail_reader_writer.js"></script>
+    <script src="temp_cocktail_data_handler.js"></script>
+    <script>
+        function startFromScratch(){
+            let temp_data_handler = new tempCocktailDataHandler();
+            temp_data_handler.resetAllFields();
+        }
+    </script>
 
     <!-- Nav Bar -->
     <section>
@@ -63,7 +71,7 @@
 
                             </div>
                             <div class="mainMenu-Button">
-                                <button><a href="./builder.html">Build</a></button>
+                                <button><a onclick="startFromScratch()" href="./builder.html">Build</a></button>
                             </div>
                         </div>
                     </div>

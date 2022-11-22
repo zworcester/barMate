@@ -25,8 +25,6 @@ class CocktailReaderWriter{
         return this.document.cocktails[id];
     }
 
-    getCocktailIndexByName
-
     getCocktailByName(name) {
         for(let x = 0; x < this.document.cocktails.length; ++x){
             if (this.document.cocktails[i].name == name){

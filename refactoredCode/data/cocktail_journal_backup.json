@@ -5,7 +5,7 @@
         {
             "name" : "The Nikka Gin Martini",
             "description" : "A Nikka spin on a Classic Dry Martini.",
-            "image" : "nikka_martini.jpg",
+            "image" : "data/images/nikka_martini.jpg",
             "ingredients" : {
                 "Nikka Coffey Gin" : [47.0,2],
                 "Lo-Fi Aperitifs Dry Vermouth" : [16.5, 1],
@@ -16,7 +16,7 @@
         {
             "name" : "The Bulleit Manhattan",
             "description" : "A Manhattan using Bulleit Rye.",
-            "image" : "bulleit_manhattan.jpg",
+            "image" : "data/images/bulleit_manhattan.jpg",
             "ingredients" : {
                 "Bulleit Rye Whiskey" : [45.0,2],
                 "Lo-Fi Aperitifs Dry Vermouth" : [16.5, 0.5],
@@ -28,7 +28,7 @@
         {
             "name" : "The Ould Fashioned",
             "description" : "A classic, even classic-er.",
-            "image" : "ould_fashioned.jpg",
+            "image" : "data/images/ould_fashioned.jpg",
             "ingredients" : {
                 "Four Roses Single Barrel Bourbon Whiskey" : [50.0,2],
                 "Simple Syrup" : [0.0, 0.25],
@@ -42,7 +42,7 @@
         {
             "name" : "The Captain's Daiquiri",
             "description" : "A Daiquiri using Captain Morgan Rum.",
-            "image" : "captain_daiquiri.jpg",
+            "image" : "data/images/captain_daiquiri.jpg",
             "ingredients" : {
                 "Captain Morgan's Private Stock Rum" : [40.0,2],
                 "Simple Syrup" : [0.0, 0.25],
@@ -53,7 +53,7 @@
         {
             "name" : "VIP Side Car",
             "description" : "A DeLuxe Interpretation of the Side Car.",
-            "image" : "vip_side_car.jpg",
+            "image" : "data/images/vip_side_car.jpg",
             "ingredients" : {
                 "Monnet VSOP Cognac" : [40.0,2],
                 "Cointreau" : [40.0, 0.25],
@@ -64,7 +64,7 @@
         {
             "name" : "Saint Jack's Rose",
             "description" : "A Jack Rose cocktail using St. George Apple Brandy.",
-            "image" : "saint_jacks_rose.jpg",
+            "image" : "data/images/saint_jacks_rose.jpg",
             "ingredients" : {
                 "St. George Apple Brandy" : [35.0,2],
                 "Grenadine" : [4.0, 0.25],
@@ -75,7 +75,7 @@
         {
             "name" : "The LAST／WORD",
             "description" : "A Nikka spin on the classic cocktail.",
-            "image" : "last_word.jpg",
+            "image" : "data/images/last_word.jpg",
             "ingredients" : {
                 "Nikka Coffey Gin" : [47.0,0.75],
                 "Green Chartreuse" : [55.0, 0.75],
@@ -89,7 +89,7 @@
         {
             "name" : "The Vodka Red Bull",
             "description" : "An evil elixir that will give you a heart attack.",
-            "image" : "vodka_red_bull.jpg",
+            "image" : "data/images/vodka_red_bull.jpg",
             "ingredients" : {
                 "Red Bull Energy Drink" : [0.0,8.4],
                 "Tito's Vodka" : [40.0, 2.0]
@@ -99,7 +99,7 @@
         {
             "name" : "The Japanese Lemon Drop Martini",
             "description" : "The ladies will love you for this.",
-            "image" : "lemon_drop.jpg",
+            "image" : "data/images/lemon_drop.jpg",
             "ingredients" : {
                 "Haku Vodka" : [40.0,2.0],
                 "Yuzu Juice" : [0.0, 1.0],
@@ -112,7 +112,7 @@
         {
             "name" : "The Russian Santa Clause",
             "description" : "A Christmas spin on the White Russian.",
-            "image" : "russian_santa.jpg",
+            "image" : "data/images/russian_santa.jpg",
             "ingredients" : {
                 "Tito's Vodka" : [40.0,1.5],
                 "Somrus Chai Cream Liqueur" : [30.0, 1.0],
@@ -126,7 +126,7 @@
         {
             "name" : "The Flight of the Buffalo",
             "description" : "A complex Whiskey cocktail sure to become a classic.",
-            "image" : "flight_buffalo.jpg",
+            "image" : "data/images/flight_buffalo.jpg",
             "ingredients" : {
                 "Buffalo Trace Whiskey" : [45.0,2.0],
                 "Crème de Violette" : [16.0, 0.5],
@@ -141,7 +141,7 @@
         {
             "name" : "The Penicillin",
             "description" : "A contemporary modern classic.",
-            "image" : "penicillin.jpg",
+            "image" : "data/images/penicillin.jpg",
             "ingredients" : {
                 "Monkey Shoulder Blended Scotch Whiskey" : [43.0,2.0],
                 "Lemon Juice" : [0.0, 0.75],
