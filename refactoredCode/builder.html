@@ -38,6 +38,13 @@
             for(let i = 0; i < cocktail_writer.size(); ++i){
                 select.innerHTML += "<option value=\"" + i.toString() + "\">" + cocktail_writer.getCocktail(i).name;
             }
+
+            let currentVal = temp_data_handler.getWhich();
+            if (currentVal == null) {
+                currentVal = "-1";
+            }
+
+            select.value = currentVal;
         }
 
         function cancelEdit() {
