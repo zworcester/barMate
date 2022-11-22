@@ -89,6 +89,11 @@
 
             }
 
+            alert("New cocktail saved!");
+            cancelEdit();
+            revertBtn();
+
+
             cocktail_writer.writeToFile();
 
             return 42;
@@ -229,7 +234,7 @@
     <div class="container">
         <div class="editBtn">
             <div class="mainMenu-Button">
-                <button id="btnColor" onclick="RemoveOverlay()">Edit</button>
+                <button id="btnColor" onclick="RemoveOverlay(); cancelEdit();">Edit</button>
                 <div id="shapeHolder" class="shapeHolder">
                     <div id="shape1" class="shape"></div>
                     <div id="shape2" class="shape"></div>
