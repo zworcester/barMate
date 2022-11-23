@@ -183,6 +183,15 @@ body {
     cursor: pointer;
 }
 
+.card .content .details .action-Button .deleteButton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .content .details .action-Button .deleteButton button {
+    color: #d11a2a !important;
+}
+
 .card .content .details .action-Button button:nth-child(2) {
     border: 1px solid #999;
     color: #999;

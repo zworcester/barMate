@@ -29,6 +29,30 @@
 
     <script>
       const cocktails = new CocktailReaderWriter("data/cocktail_journal.json");
+
+      function refreshCards(){
+        let dynamic_row = new CocktailCards("cocktailListRow", cocktails);
+        dynamic_row.inner_html_create_cards();
+        let links = document.getElementsByName("delete_Buttons");
+
+        for (let i = 0; i < links.length; ++i){
+            links[i].setAttribute('onclick', 'deleteCocktail(Number('+ i.toString() + '));');
+        }
+      }
+
+      function deleteCocktail(idx){
+        const name = cocktails.getCocktail(idx).name;
+
+        if(confirm("Are you sure you would like to delete \"" + name + "\"?"))
+        {
+            cocktails.removeCocktail(idx);
+            cocktails.writeToFile();
+            refreshCards();
+
+
+        }
+      }
+
       console.log(cocktails.cocktails);
     </script>
 
@@ -59,11 +83,8 @@
   </section>
     <div class="row" id="cocktailListRow">
         <script>
-          let dynamic_row = new CocktailCards("cocktailListRow", cocktails);
-          dynamic_row.inner_html_create_cards();
-          let links = document.getElementsByName("link");
-          console.log(links);
-          </script>
+            refreshCards();
+        </script>
     </div>
     
 </body>
