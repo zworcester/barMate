@@ -1,0 +1,838 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    /* background: linear-gradient(-315deg, #fbda61, #ff5acd); */
+}
+
+h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+    margin: 100px 0px auto auto;
+    color: #ff5acd;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-weight: 900;
+    color: #ff5acd;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-315deg, #252523, #252425);
+}
+
+label {
+    font-weight: 800;
+}
+
+input[type=text] {
+    background-color: #ff5ace00;
+    color: #fbda61;
+    border: none;
+    border-bottom: 2px solid #fbda61;
+    border-radius: .15rem;
+    font-weight: 600;
+    width: 20%;
+    text-align: center;
+}
+
+input[type=text]:focus {
+    outline: none;
+    background-color: #ff5acd;
+}
+
+textarea {
+    margin-top: 10px;
+    background-color: #ff5ace00;
+    text-align: center;
+    justify-content: center;
+    color: #ff5acd;
+    border: none;
+    border-bottom: 2px solid #ff5acd;
+    font-size: 32px;
+    font-weight: 600;
+    resize: none;
+}
+
+textarea.textDescription {
+    font-size: 16px !important;
+    font-weight: 400;
+    border: none;
+    border-bottom: none;
+    text-align: left;
+    width: 80%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+textarea:focus {
+    outline: 2px solid #ff5acd;
+}
+
+textarea::placeholder {
+    color: #ff5acd;
+}
+
+i {
+    margin-right: 20px;
+    padding-left: 25px;
+    color: #ff5acd;
+}
+
+input[type=file] {
+    opacity: 0;
+}
+
+.fa-square-pen {
+    visibility: hidden;
+}
+
+
+/*-***************************************NAVBAR *************************-*/
+
+.nav-link {
+    /* margin-left: 100px; */
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+
+/*--------------------------------NAVBAR ----------------------------------*/
+
+
+/*-********************************Side Menu Icons *************************-*/
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+    top: 0;
+    width: 100%;
+}
+
+.stickyRight-o {
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    height: 50%;
+    padding-bottom: 50px;
+    visibility: hidden;
+}
+
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.sideMenu {
+    padding-bottom: 20px;
+}
+
+
+/*-------------------------------OTHER---------------------------------------*/
+
+.refreshInvis {
+    visibility: hidden;
+}
+
+
+/*-------------------------Side Menu Icons ----------------------------------*/
+
+
+/*-******************************Caution Animation *************************-*/
+
+#cautiontop {
+    position: absolute;
+    padding: 50px 0;
+    width: 100%;
+    background-image: linear-gradient(315deg, #c3981e 8%, black 5%, #c3981e 10%, black 10%, black 20%, #c3981e 20%, #c3981e 30%, black 30%, black 40%, #c3981e 40%, #c3981e 50%, black 50%, black 60%, #c3981e 60%, #c3981e 70%, black 70%, black 80%, #c3981e 80%, #c3981e 90%, black 90%, #c3981e 90%, #c3981e 100%);
+    top: 0;
+    background-size: 200% 200%;
+    visibility: hidden;
+    z-index: -100;
+    animation: caution 3s linear infinite;
+}
+
+#cautionbot {
+    position: absolute;
+    padding: 50px 0;
+    width: 100%;
+    background-image: linear-gradient(315deg, #c3981e 8%, black 5%, #c3981e 10%, black 10%, black 20%, #c3981e 20%, #c3981e 30%, black 30%, black 40%, #c3981e 40%, #c3981e 50%, black 50%, black 60%, #c3981e 60%, #c3981e 70%, black 70%, black 80%, #c3981e 80%, #c3981e 90%, black 90%, #c3981e 90%, #c3981e 100%);
+    visibility: hidden;
+    z-index: 100;
+    transform: scaleX(-1) rotate(180deg);
+    transition: opacity 1.0s ease-in;
+    background-size: 200% 200%;
+    animation: caution 3s linear infinite;
+}
+
+@keyframes caution {
+    0% {
+        background-position: 200% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/*-------------------------Caution Animation -------------------------------*/
+
+
+/*-******************************Overlay*************************-*/
+
+.Overlay {
+    background-color: aqua;
+    position: absolute;
+    padding: 500px 600px;
+    z-index: 100;
+    width: 100%;
+    top: 400px;
+    opacity: 0;
+}
+
+
+/*-------------------------Overlay ----------------------------------*/
+
+
+/*-**************************************CONTAINER *************************-*/
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    /* background: linear-gradient( rgba(49, 47, 47, 0.1), rgba(49, 47, 47,
+    0.418)); */
+    background: linear-gradient(-315deg, #fbda61, #ff5acd);
+    border-radius: 1rem;
+    margin-top: 20px;
+    padding: 20px;
+    width: 1400px;
+    z-index: -1;
+}
+
+
+/*-------------------------CONTAINER ----------------------------------*/
+
+
+/*-***********************************Selector ****************************-*/
+
+.selectCocktail {
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    align-items: baseline;
+    position: relative;
+    margin-bottom: 45px;
+    border-radius: 5px;
+}
+
+.selectCocktail select {
+    border: none;
+    /* padding: 3px; */
+    color: #ff5acd;
+    padding: 1px;
+    /* background: #1816160a; */
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 0px 8px;
+    overflow: auto;
+}
+
+select:focus {
+    margin-right: 5px;
+}
+
+select:focus>option:hover {
+    color: #5e7266 !important;
+}
+
+select:focus>option:checked {
+    /* background: #221f21 !important; */
+    /* color: #5e7266 */
+    background: #421032;
+}
+
+.select-selected {
+    background-color: #61fb6e;
+}
+
+select:after {
+    border-radius: 50px;
+}
+
+#cocktail_select {
+    padding: 9px;
+    font-weight: 700;
+    background-color: #262625;
+}
+
+
+/*-***********************************Edit Button *************************-*/
+
+.editBtn {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    margin-bottom: 45px;
+    border-radius: 5px;
+    /* width: 8.5%; */
+}
+
+.editBtn {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    margin-bottom: 45px;
+    border-radius: 5px;
+    /* width: 8.5%; */
+}
+
+
+/*-------------------------Edit Button ----------------------------------*/
+
+
+/*-******************************* mainMenu Button *************************-*/
+
+.mainMenu-Button {
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    overflow: hidden;
+}
+
+.mainMenu-Button button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: linear-gradient(-315deg, #252523, #252425);
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+
+/*------------------------ MainMenu Button ----------------------------------*/
+
+
+/*-************************* edit Button Animation *************************-*/
+
+.shapeHolder {
+    position: absolute;
+    padding: 50px;
+    margin: -200px 61px;
+    border-radius: 2rem;
+}
+
+.shapeHolder::after {
+    content: "";
+    animation: waves 5s cubic-bezier(.45, .05, .55, .95) infinite;
+}
+
+@keyframes waves {
+    0% {
+        transform: translate(0px, -50px);
+    }
+    100% {
+        transform: translate(0px, 750px);
+        /* width: calc(100% + 1.3px); */
+    }
+}
+
+.shape {
+    background: #c3981e;
+    width: 150px;
+    height: 140px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
+    /* border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; */
+    overflow: hidden;
+    animation: shapeAni 1s cubic-bezier(.45, .05, .55, .95) infinite;
+    z-index: 10;
+    position: absolute;
+}
+
+.shape:nth-child(1) {
+    background: #c3981e80;
+    width: 155px;
+    height: 150px;
+    animation: shapeAni 1.2s cubic-bezier(.45, .05, .55, .95) infinite;
+    z-index: 11;
+    opacity: .5;
+    position: absolute;
+    transform: 2s;
+}
+
+@keyframes shapeAni {
+    0% {
+        /* translate: 20px 0 0 0 ease-in-out; */
+        border-radius: 100% 50% / 50% 100%;
+        /* border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; */
+    }
+    25% {
+        /* translate: 20px 20px ease-in-out; */
+    }
+    50% {
+        /* border-radius: 30% 5% 10% 10%; */
+        /* border-radius: 75% 75%; */
+        /* translate: -20px 20px ease-in-out; */
+        border-radius: 50% 100% / 100% 50%;
+    }
+    75% {
+        /* border-radius: 50% 25%; */
+        /* translate: -20px 0px; */
+    }
+    100% {
+        /* border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; */
+        /* translate: 0px 0px; */
+        border-radius: 100% 50% / 50% 100%;
+    }
+}
+
+
+/*--------------------- edit Button Animation -------------------------------*/
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!!!!! INGREDIENT COLUMN !!!!!!!!!!!!!!!!!!!!- */
+
+
+/*-************************* plus Button *************************-*/
+
+.plus-Button {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.plus-Button button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: inset 0 0 6px 4px #0000000d;
+    background: linear-gradient(0deg, #ff5acd, #ff5acd);
+    /* background: linear-gradient(-315deg, #252523, #252425); */
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+#plus-button {
+    visibility: hidden;
+}
+
+
+/*------------------------- plus Button -------------------------------*/
+
+
+/*-********************* ingredientBox ***********************-*/
+
+.ingredientBox {
+    color: #ff5acd;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 20%;
+    max-height: 500px;
+    min-width: 20%;
+    /* background: #1816160a; */
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+    overflow: auto;
+}
+
+.ingredientsGrid {
+    display: grid;
+    grid-template-columns: 200px 50px 50px 00px;
+    gap: 5px 5px;
+}
+
+.ingredientsTrash {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: url("images/icons8-trash-can.svg") center no-repeat;
+    background-size: cover;
+}
+
+
+/*------------------------ ingredientBox ----------------------*/
+
+
+/*-********************* ingredientTableInput & form ***********************-*/
+
+.ingredientTableInput {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.25rem;
+    margin-bottom: 1px;
+    background: #252523;
+    border-color: rgba(255, 0, 0, 0);
+    /* border: none; */
+    color: white;
+    border-top-left-radius: 0.2rem !important;
+    border-bottom-left-radius: 0.2rem !important;
+    border-top-right-radius: 0.2em !important;
+    border-bottom-right-radius: 0.2rem !important;
+}
+
+.ingredientTableButton {
+    display: flex;
+    justify-items: right;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.25rem;
+    margin-bottom: 1px;
+    background: #252523;
+    border-color: rgba(255, 0, 0, 0);
+    /* border: none; */
+    color: white;
+    border-top-left-radius: 0.2rem !important;
+    border-bottom-left-radius: 0.2rem !important;
+    border-top-right-radius: 0.2em !important;
+    border-bottom-right-radius: 0.2rem !important;
+}
+
+.ingredientTableButton button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: linear-gradient(-315deg, #252523, #252425);
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    background-color: #ff5acd;
+    width: 100%;
+    border-radius: .2rem;
+    align-self: center;
+    padding: 15px 5px;
+    box-shadow: 2px 2px 20px 2px #ff5acd;
+}
+
+.input-group {
+    justify-content: center;
+}
+
+
+/*------------------------ ingredientTableInput & form----------------------*/
+
+
+/*-********************* saveBox, buttons & toast ***********************-*/
+
+.saveBox {
+    color: #ff5acd;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    align-items: center;
+    min-height: 20%;
+    max-height: 500px;
+    min-width: 20%;
+    /* background: #1816160a; */
+    /* background: linear-gradient(-315deg, #252523, #252425); */
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+    overflow: auto;
+}
+
+.cancel-Button {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.cancel-Button button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: inset 0 0 6px 4px #0000000d;
+    background: linear-gradient(-315deg, #252523, #252425);
+    /* background: linear-gradient(-315deg, #252523, #252425); */
+    color: #ff5acd;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+.save-Button {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.save-Button button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: linear-gradient(-315deg, #252523, #252425);
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+.toast {
+    z-index: 1000;
+    margin: auto;
+    margin-top: -48px;
+    position: absolute;
+    background-color: #737f87ea;
+    border-color: #25242500;
+}
+
+.toast-header {
+    background-color: #86fdc4b0;
+}
+
+
+/*------------------------ saveBox, buttons & toast ----------------------*/
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!! INGREDIENT COLUMN !!!!!!!!!!!!!!!!!!!!!!!!!- */
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!! DESCRIPTION COLUMN !!!!!!!!!!!!!!!!!!!!!!!!!- */
+
+
+/*--------------------------- Description Box -------------------------------*/
+
+.imgDescriptionBox {
+    color: #ff5acd;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 20%;
+    max-height: 500px;
+    min-width: 20%;
+    /* background: #1816160a; */
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+    overflow: auto;
+}
+
+.img-box {
+    display: flex;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    flex-shrink: 0;
+    /* box-shadow: 0px 0px 5px 1px #ff5acd; */
+}
+
+.img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxDescripton {
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    min-height: 20%;
+    max-height: 100%;
+    min-width: 20%;
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+    color: #ff5acd;
+}
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!! DESCRIPTION COLUMN !!!!!!!!!!!!!!!!!!!!!!!!!- */
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!! INFO ABV COLUMN !!!!!!!!!!!!!!!!!!!!!!!!!- */
+
+.boxABV {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    min-height: 20%;
+    max-height: 100%;
+    min-width: 20%;
+    /* background: #1816160a; */
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+}
+
+#ABV {
+    color: #fbda61;
+    font-weight: 600;
+}
+
+
+/*-*********************************** Progress Bar ************************-*/
+
+#myProgress {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15px;
+    background-color: #ff5acd;
+    border-radius: 2rem;
+    z-index: -1;
+    overflow: hidden;
+    margin: 20px;
+}
+
+#myBar {
+    width: 0%;
+    height: 15px;
+    background-color: #fbda61;
+    border-radius: 2rem 0rem 0rem 2rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    z-index: 10;
+    transition-duration: 300ms;
+}
+
+
+/*--------------------------- Progress Bar ------------------------------*/
+
+
+/* .navbar-nav {
+    margin-right: 100px;
+}
+
+.container-fluid {
+    top: 0;
+    left: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    position: fixed;
+} */
+
+
+/* .boxABVSwitch {
+    padding: 50px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    background: white;
+    min-height: 20%;
+    max-height: 100%;
+    min-width: 20%;
+    background: #1816160a;
+    background: linear-gradient(-315deg, #252523, #252425);
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(3rem);
+    margin: 20px 20px;
+} */
+
+
+/*-***************************************CARD *************************-*/
+
+
+/* .card {
+    display: flex;
+    border-radius: 1rem;
+    margin: 2rem 0rem;
+    padding: 2rem;
+    box-shadow: 6px 6px 20px rgba(68, 67, 67, 0.322);
+    justify-content: space-between;
+} */
+
+
+/* -!!!!!!!!!!!!!!!!!!!!!!!!! INFO ABV COLUMN !!!!!!!!!!!!!!!!!!!!!!!!!- */
+
+#BottomPadding {
+    padding-bottom: 250px;
+}
