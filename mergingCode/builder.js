@@ -95,7 +95,7 @@ lottieAnimation.addEventListener("DOMLoaded", () => {
 
 
 //**************** Function to increase ABV Content Bar *****************
-window.onkeyup = keyup;
+/*window.onkeyup = keyup;
 
 function keyup(e) {
     var inputValue = document.querySelector('#ABVTotal').value;
@@ -128,7 +128,7 @@ function keyup(e) {
     }
 
 
-}
+} */
 //**************** Function to increase ABV Content Bar *****************
 // window.onkeyup = keyup;
 //

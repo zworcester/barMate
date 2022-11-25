@@ -190,10 +190,18 @@
             document.getElementById("ABV").innerHTML = "&nbsp;" + finalAnswer.toFixed(2) + "%";
             abvBar.style.width = finalAnswer.toFixed(2) + "%";
 
+            if (ready) {
+                if (finalAnswer <= 10) {
+                    lottieAnimation.goToAndPlay('low', true);
+                    lottieAnimation.loop = true;
+                } else if (finalAnswer >= 11 && finalAnswer <= 80) {
+                    lottieAnimation.goToAndPlay('mid', true);
+                } else {
+                    lottieAnimation.goToAndPlay('high', true);
+                }
 
-
+            }
             return;
-
         }
 
         function saveEdit() {
@@ -417,9 +425,9 @@
                         name_area = document.getElementById("name_textarea");
 
                         name_area.addEventListener("input", function handleChange1(event) {
-                            console.log(event.target.value);
+                            let name = event.target.value;
 
-                            temp_data_handler.setName(event.target.value);
+                            temp_data_handler.setName(name);
                         });
 
                         if (temp_data_handler.getName() != null) {
