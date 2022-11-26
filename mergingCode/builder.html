@@ -305,39 +305,42 @@
 
     <div id="OverlayID" class="Overlay"></div>
     <div class="container">
-        <div class="selectCocktail">
-            <label for="cocktails">Cocktail:</label>
-            <select id="cocktail_select">
-            </select>
-            <script>
-                updateCocktailList();
 
-                document.getElementById('cocktail_select').onchange = (event) => {
-                    var value = Number(event.target.value);
+        <div class="topm">
+            <div class="selectCocktail">
+                <label for="cocktails">Cocktail:</label>
+                <select id="cocktail_select">
+                </select>
+                <script>
+                    updateCocktailList();
 
-                    if (value >= 0) {
-                        changeCocktail(value);
-                    } else {
-                        console.log("test");
-                        temp_data_handler.resetAllFields();
+                    document.getElementById('cocktail_select').onchange = (event) => {
+                        var value = Number(event.target.value);
+
+                        if (value >= 0) {
+                            changeCocktail(value);
+                        } else {
+                            console.log("test");
+                            temp_data_handler.resetAllFields();
+                        }
+
+                        document.getElementById("name_textarea").value = temp_data_handler.getName();
+                        document.getElementById("desc_textarea").value = temp_data_handler.getDescription();
+                        updateImage();
+                        updateIngredients();
+                        updateBar();
+
                     }
+                </script>
 
-                    document.getElementById("name_textarea").value = temp_data_handler.getName();
-                    document.getElementById("desc_textarea").value = temp_data_handler.getDescription();
-                    updateImage();
-                    updateIngredients();
-                    updateBar();
-
-                }
-            </script>
-
-        </div>
-        <div class="editBtn">
-            <div class="mainMenu-Button">
-                <button id="btnColor" onclick="RemoveOverlay(); cancelEdit();">Edit</button>
-                <div id="shapeHolder" class="shapeHolder">
-                    <div id="shape1" class="shape"></div>
-                    <div id="shape2" class="shape"></div>
+            </div>
+            <div class="editBtn">
+                <div class="mainMenu-Button">
+                    <button id="btnColor" onclick="RemoveOverlay(); cancelEdit();">Edit</button>
+                    <div id="shapeHolder" class="shapeHolder">
+                        <div id="shape1" class="shape"></div>
+                        <div id="shape2" class="shape"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -374,19 +377,25 @@
                     <div class="plus-Button">
                         <button type="button" onclick="plusButton();" id="plus-button">+</button>
                     </div>
+                    <div class="innerIngridentBox">
+                        <div class="cancel-Button">
+                            <button type="button" id="cancel-button" class="ingredientTableButton" onclick="cancelEdit();">Cancel</button>
+                        </div>
+                        <div class="save-Button">
+                            <button type="button" id="save-button" class="ingredientTableButton" onclick="saveEdit();
+                        updateBar();">Add</button>
+                        </div>
+                      
+    
+                    </div>
                 </div>
 
+
                 <div class="saveBox">
-                    <div class="cancel-Button">
-                        <button type="button" id="cancel-button" class="ingredientTableButton" onclick="cancelEdit();">Cancel</button>
-                    </div>
-                    <div class="save-Button">
-                        <button type="button" id="save-button" class="ingredientTableButton" onclick="saveEdit();
-                    updateBar();">Save</button>
-                    </div>
-                    <!-- <div class="save-Button">
+                
+                    <div class="main-Save-Button">
                         <button type="button" id="save-button" onclick="saveButton();">SAVE</button>
-                    </div> -->
+                    </div>
 
                 </div>
 

@@ -245,7 +245,7 @@ input[type=file] {
 .selectCocktail {
     font-weight: 500;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     align-items: baseline;
     position: relative;
     margin-bottom: 45px;
@@ -294,6 +294,11 @@ select:after {
     background-color: #262625;
 }
 
+.topm {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
 
 /*-***********************************Edit Button *************************-*/
 
@@ -576,12 +581,19 @@ form {
 
 
 /*-********************* saveBox, buttons & toast ***********************-*/
+.innerIngridentBox {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
 
 .saveBox {
     color: #ff5acd;
     padding: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     /* flex-direction: column; */
     align-items: center;
     min-height: 20%;
@@ -624,6 +636,29 @@ form {
 
 .save-Button {
     visibility: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.main-Save-Button button {
+    padding: 10px 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: linear-gradient(-315deg, #252523, #252425);
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+.main-Save-Button {
+    visibility: visible;
     position: relative;
     display: flex;
     justify-content: space-between;
