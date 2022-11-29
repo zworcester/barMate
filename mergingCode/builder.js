@@ -166,6 +166,9 @@ function cancelBtn() {
         trashes[x].style.visibility = "visible";
     }
 
+    document.getElementById('save-cocktail-button').style.visibility = 'visible';
+    document.getElementById('revert-cocktail-button').style.visibility = 'visible';
+
 
     document.getElementById("btnColor").style.background = "#c3981e";
     document.getElementById("btnColor").style.color = "black";
@@ -210,6 +213,8 @@ function revertBtn() {
     document.getElementById("cautiontop").style.visibility = 'hidden';
     document.getElementById("cautionbot").style.visibility = 'hidden';
     document.getElementById("plus-button").style.visibility = 'hidden';
+    document.getElementById('save-cocktail-button').style.visibility = 'hidden';
+    document.getElementById('revert-cocktail-button').style.visibility = 'hidden';
     [].forEach.call(document.querySelectorAll('.fa-square-pen'), function(el) {
         el.style.visibility = 'hidden';
     });

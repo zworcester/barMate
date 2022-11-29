@@ -131,9 +131,15 @@
         }
 
         function revert() {
+            let current = temp_data_handler.getWhich();
+
             cancelEdit();
             revertBtn();
             temp_data_handler.resetAllFields();
+
+            if (current >= 0){
+                changeCocktail(current);
+            }
             document.getElementById("name_textarea").value = temp_data_handler.getName();
             document.getElementById("desc_textarea").value = temp_data_handler.getDescription();
             updateImage();
@@ -398,8 +404,10 @@
 
 
                 <div class="saveBox">
-                
-                    <div class="main-Save-Button">
+                    <div class="main-Save-Button" style="visibility:hidden" id='revert-cocktail-button'>
+                        <button type="button" id="revert-button" onclick="revert();">REVERT</button>
+                    </div>
+                    <div class="main-Save-Button" style="visibility:hidden" id='save-cocktail-button'>
                         <button type="button" id="save-button" onclick="saveButton();">SAVE</button>
                     </div>
 
