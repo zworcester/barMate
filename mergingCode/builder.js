@@ -161,14 +161,17 @@ function toggleBtn() {
 }
 
 function cancelBtn() {
+    let trashes = document.getElementsByName("trash");
+    for(let x = 0; x < trashes.length; ++x){
+        trashes[x].style.visibility = "visible";
+    }
+
 
     document.getElementById("btnColor").style.background = "#c3981e";
     document.getElementById("btnColor").style.color = "black";
     document.getElementById("btnColor").style.fontWeight = "600";
     document.getElementById("btnColor").innerHTML = "Quit";
     document.getElementById("plus-button").style.visibility = 'visible';
-    document.getElementById("save-button").style.visibility = 'visible';
-    document.getElementById("cancel-button").style.visibility = 'visible';
     document.getElementById("shape2").style.background = "linear-gradient(-315deg, #252523, #252425)";
     document.getElementById("shape1").style.background = "linear-gradient(-315deg, rgb(37 37 35 / 50%), rgb(37 36 37 / 50%))";
     // document.get("container").style.background = "linear-gradient(315deg, #c3981e 10%, black 10%, black 20%, #c3981e 20%,#c3981e 30%, black 30%, black 40%, #c3981e 40%,#c3981e 50%, black 50%, black 60%, #c3981e 60%,#c3981e 70%, black 70%, black 80%, #c3981e 80%, #c3981e 90%, black 90%)";
@@ -193,6 +196,11 @@ function cancelBtn() {
 }
 
 function revertBtn() {
+    let trashes = document.getElementsByName("trash");
+    for(let x = 0; x < trashes.length; ++x){
+        trashes[x].style.visibility = "hidden";
+    }
+
     document.getElementById("btnColor").style.background = "linear-gradient(-315deg, #252523, #252425)";
     document.getElementById("btnColor").style.color = "#fff";
     document.getElementById("btnColor").style.fontWeight = "600";
@@ -202,8 +210,6 @@ function revertBtn() {
     document.getElementById("cautiontop").style.visibility = 'hidden';
     document.getElementById("cautionbot").style.visibility = 'hidden';
     document.getElementById("plus-button").style.visibility = 'hidden';
-    document.getElementById("save-button").style.visibility = 'hidden';
-    document.getElementById("cancel-button").style.visibility = 'hidden';
     [].forEach.call(document.querySelectorAll('.fa-square-pen'), function(el) {
         el.style.visibility = 'hidden';
     });

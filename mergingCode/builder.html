@@ -19,6 +19,8 @@
             document.getElementById("new_ingredient_form").style.setProperty('display', 'block');
             document.getElementById("plus-button").disabled = true;
             document.getElementById("plus-button").style.opacity = .3;
+            document.getElementById("save-button").style.visibility = 'visible';
+            document.getElementById("cancel-button").style.visibility = 'visible';
             console.log("plus button pressed");
         }
 
@@ -55,6 +57,8 @@
             document.getElementById("new_ingredient_form").style.setProperty('display', 'none', 'important');
             document.getElementById("plus-button").disabled = false;
             document.getElementById("plus-button").style.opacity = 1;
+            document.getElementById("save-button").style.visibility = 'hidden';
+            document.getElementById("cancel-button").style.visibility = 'hidden';
         }
 
         function saveButton() {
@@ -149,7 +153,7 @@
                     abv = Number(ings[i][0]).toFixed(2);
                     ratio = Number(ings[i][1]).toFixed(2);
 
-                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i.toString() + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i.toString() + "\'); updateBar(); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
+                    ing_area.innerHTML += "<div class=\"ingredientsGrid\" id=\"" + i.toString() + "\"><div name=\"name\">" + i.toString() + "</div><div name=\"abv\">" + abv.toString() + "</div><div name=\"ratio\">" + ratio.toString() + "</div><div name=\"trash\" style=\"visibility:hidden\"><button onclick=\"temp_data_handler.removeIngredient(\'" + i.toString() + "\'); updateBar(); document.getElementById(\'" + i.toString() + "\').remove();\" class=\"ingredientsTrash\"></button></div>";
                 }
 
             }
@@ -239,6 +243,8 @@
             document.getElementById("new_ingredient_form").style.setProperty('display', 'none', 'important');
             document.getElementById("plus-button").disabled = false;
             document.getElementById("plus-button").style.opacity = 1;
+            document.getElementById("save-button").style.visibility = 'hidden';
+            document.getElementById("cancel-button").style.visibility = 'hidden';
 
         }
 
