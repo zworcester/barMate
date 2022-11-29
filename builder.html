@@ -98,10 +98,10 @@
             if (temp_data_handler.getWhich() == null || temp_data_handler.getWhich() < 0) {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
-                    fs.copyFile(SAVE_IMG, "mergingCode/data/images/" + new_img_name, (err) => {
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("data/images/" + new_img_name) && SAVE_IMG != "data/images/" + new_img_name) {
+                    fs.copyFile(SAVE_IMG, "data/images/" + new_img_name, (err) => {
                         if (err) throw err;
-                        console.log(SAVE_IMG + ' was copied to mergingCode/data/images/' + new_img_name);
+                        console.log(SAVE_IMG + ' was copied to data/images/' + new_img_name);
                     });
 
                     final_image_name = "data/images/" + new_img_name;
@@ -116,10 +116,10 @@
             } else {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
-                    fs.copyFile(SAVE_IMG, "mergingCode/data/images/" + new_img_name, (err) => {
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("data/images/" + new_img_name) && SAVE_IMG != "data/images/" + new_img_name) {
+                    fs.copyFile(SAVE_IMG, "data/images/" + new_img_name, (err) => {
                         if (err) throw err;
-                        console.log(SAVE_IMG + ' was copied to mergingCode/data/images/' + new_img_name);
+                        console.log(SAVE_IMG + ' was copied to data/images/' + new_img_name);
                     });
 
                     final_image_name = "data/images/" + new_img_name;
