@@ -68,6 +68,7 @@
             let SAVE_DESC = temp_data_handler.getDescription();
             let SAVE_IMG = temp_data_handler.getImage();
             let SAVE_INGS = temp_data_handler.getIngredients();
+            let final_image_name = "";
 
             for (ing in SAVE_INGS) {
                 SAVE_INGS[ing][0] = Number(SAVE_INGS[ing][0]);
@@ -97,27 +98,37 @@
             if (temp_data_handler.getWhich() == null || temp_data_handler.getWhich() < 0) {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if (SAVE_IMG != "" && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
                     fs.copyFile(SAVE_IMG, "mergingCode/data/images/" + new_img_name, (err) => {
                         if (err) throw err;
                         console.log(SAVE_IMG + ' was copied to mergingCode/data/images/' + new_img_name);
                     });
+
+                    final_image_name = "data/images/" + new_img_name;
+                }
+                else if (SAVE_IMG == null || SAVE_IMG === ''){
+                    final_image_name = "images/null.png"
                 }
 
-                cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, "data/images/" + new_img_name, SAVE_INGS);
+                cocktail_writer.addCocktail(SAVE_NAME, SAVE_DESC, final_image_name, SAVE_INGS);
 
                 alert("New cocktail saved!");
             } else {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if (SAVE_IMG != "" && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("mergingCode/data/images/" + new_img_name) && SAVE_IMG != "mergingCode/data/images/" + new_img_name) {
                     fs.copyFile(SAVE_IMG, "mergingCode/data/images/" + new_img_name, (err) => {
                         if (err) throw err;
                         console.log(SAVE_IMG + ' was copied to mergingCode/data/images/' + new_img_name);
                     });
+
+                    final_image_name = "data/images/" + new_img_name;
+                }
+                else if (SAVE_IMG == null || SAVE_IMG === ''){
+                    final_image_name = "images/null.png"
                 }
 
-                cocktail_writer.modifyCocktail(Number(temp_data_handler.getWhich()), SAVE_NAME, SAVE_DESC, "data/images/" + new_img_name, SAVE_INGS);
+                cocktail_writer.modifyCocktail(Number(temp_data_handler.getWhich()), SAVE_NAME, SAVE_DESC, final_image_name, SAVE_INGS);
                 alert("Cocktail modified!");
             }
 
@@ -230,6 +241,13 @@
 
             if (abv_IN == "" || abv_IN == null || abv_IN == undefined) {
                 alert("ABV field cannot be empty.\nPlease give your ingredient an ABV!");
+
+                return;
+            }
+
+            if (Number(abv_IN) < 0 || Number(abv_IN) > 100)
+            {
+                alert("ABV field must contain a positive number less than or equal to 100!");
 
                 return;
             }
