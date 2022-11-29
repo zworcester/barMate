@@ -135,6 +135,9 @@
 
             cancelEdit();
             revertBtn();
+            var overlay = document.getElementById("OverlayID");
+            overlay.classList.remove("Overlay");
+            overlay.classList.add("Overlay");
             temp_data_handler.resetAllFields();
 
             if (current >= 0){
