@@ -1,7 +1,12 @@
 // Modules
 const {app, BrowserWindow, webContents, session, dialog, globalShortcut, Menu, MenuItem, ipcMain} = require('electron')
 
+if(process.argv.includes("-h") || process.argv.includes("--help")){
+  console.log("barMate version 1.0.0 - Create cocktails and view your recipes!\n\nYou may run this app in dev mode. Unsupported command line switches will be ignored.\n\nOptions:\n\t-h, --help\tShows this menu.\n\t-d, --dev\tShow the chromium dev tools on launch.");
+  process.exit();
+}
 
+const ARGS_DEV = (process.argv.includes("--dev") || process.argv.includes('-d')) ? true : false;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -19,7 +24,7 @@ function createWindow () {
 
 
   mainWindow = new BrowserWindow({
-    width: 600 , height: 600,
+    width: 1920 , height: 1080,
     x: 0, y: 50,
     minWidth: 100, minHeight: 100,
     maxWidth: 2560, maxHeight: 1440,
@@ -52,10 +57,12 @@ function createWindow () {
   //console.log(Object.is(ses, customSes))
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadFile('./refactoredCode/index.html')
+  mainWindow.loadFile('./mergingCode/index.html')
 
-
- mainWindow.webContents.openDevTools()
+  if (ARGS_DEV)
+  {
+    mainWindow.webContents.openDevTools();
+  }
 
   mainWindow.webContents.on('did-finish-load', () =>{
     // dialog.showOpenDialog({
