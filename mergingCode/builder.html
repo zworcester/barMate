@@ -328,8 +328,9 @@
 
                     document.getElementById('cocktail_select').onchange = (event) => {
                         var value = Number(event.target.value);
+                        revert();
 
-                        if (value > 0) {
+                        if (value >= 0) {
                             temp_data_handler.setWhich(value.toString());
                             changeCocktail(value);
                         } else {
