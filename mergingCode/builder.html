@@ -131,7 +131,7 @@
         }
 
         function revert() {
-            let current = temp_data_handler.getWhich();
+            let current = Number(document.getElementById('cocktail_select').value);
 
             cancelEdit();
             revertBtn();
@@ -321,7 +321,7 @@
         <div class="topm">
             <div class="selectCocktail">
                 <label for="cocktails">Cocktail:</label>
-                <select id="cocktail_select">
+                <select id="cocktail_select" value=-1>
                 </select>
                 <script>
                     updateCocktailList();
@@ -329,7 +329,8 @@
                     document.getElementById('cocktail_select').onchange = (event) => {
                         var value = Number(event.target.value);
 
-                        if (value >= 0) {
+                        if (value > 0) {
+                            temp_data_handler.setWhich(value.toString());
                             changeCocktail(value);
                         } else {
                             console.log("test");

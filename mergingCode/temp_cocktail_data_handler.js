@@ -70,7 +70,7 @@ class tempCocktailDataHandler{
         this.setDescription(cocktail.description);
         this.setImage(cocktail.image);
         this.setIngredients(cocktail.ingredients);
-        this.setWhich(which);
+        this.setWhich(which.toString());
     }
 
     setWhich(which){
