@@ -57,7 +57,7 @@ function createWindow () {
   //console.log(Object.is(ses, customSes))
 
   // Load index.html into the new BrowserWindow
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./recipieBook.html')
 
   if (ARGS_DEV)
   {

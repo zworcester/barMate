@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <title>barMate</title>
     <!-- CSS only -->
   
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
@@ -56,11 +56,11 @@
 
         <!-- Nav Bar -->
     <section id="title">
-      <div class="container-fluid">
+      <div class="container-fluid" id="navbar">
 
-          <nav class="navbar  navbar-expand-lg navbar-dark">
+          <nav class="navbar navbar-expand-lg navbar-dark">
               <div class="container-fluid" id="navbarcontainer">
-                  <a class="navbar-brand" href="./index2.html">barMate</a>
+                  <a class="navbar-brand" href="./index.html">barMate</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -69,7 +69,7 @@
                           <li class="nav-item ">
                               <a class="nav-link" aria-current="page" href="index.html">home</a>
                           </li>
-                          <li class="nav-item ">
+                          <li class="nav-item dropdown">
                               <a class="nav-link" href="javascript:localStorage.removeItem('temp_cocktail_name');localStorage.removeItem('temp_cocktail_description');localStorage.removeItem('temp_cocktail_image');localStorage.removeItem('temp_cocktail_ingredients');localStorage.removeItem('temp_cocktail_which');window.location='builder.html'">builder</a>
                           </li>
                       </ul>
@@ -79,11 +79,27 @@
           </nav>
       </div>
   </section>
+
+
+   <!-- --------------------- Side Menu Icons --------------------------  -->
+   <ul class="nav stickyRight-o flex-column">
+    <li class="nav-item">
+        <a class="nav-link active sideMenu" aria-current="page" href="./index.html"><i class="fa-solid fa-house-chimney"></i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link sideMenu" href="./recipieBook.html"><i class="fa-solid fa-whiskey-glass"></i></a>
+    </li>
+</ul>
+
+<!-- --------------------- Side Menu Icons --------------------------  -->
+
+<div class="container">
     <div class="row" id="cocktailListRow">
         <script>
             refreshCards();
         </script>
     </div>
-    
+</div>
+    <script type="text/javascript" src="./recipieBook.js"></script>
 </body>
 </html>
