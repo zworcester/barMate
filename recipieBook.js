@@ -26,7 +26,7 @@ const hideMenu = () => document.querySelector(".stickyRight-o").classList.remove
 document.addEventListener("scroll", (e) => window.scrollY < 100 ? hideMenu() : showMenu());
 
 
-document.body.onload = addElement;
+/*document.body.onload = addElement;
 
 var alcoholList = [{
         id: 0,
@@ -80,6 +80,6 @@ const cardID = alcoholList.foreach((item) => {
 
 // const headerName = document.getElementById('headerName');
 
-console.log(headerName)
+console.log(headerName) */
 
 
