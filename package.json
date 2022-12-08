@@ -1,23 +1,25 @@
 {
-    "name": "master-electron",
+    "name": "barMate",
     "version": "1.0.0",
     "description": "Master Electron Course Code",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
         "watch": "nodemon --exec electron .",
-        "reseat": "git reset --hard"
+        "reseat": "git reset --hard",
+        "build": "electron-builder --help"
     },
-    "repository": "https://github.com/stackacademytv/master-electron",
+    "repository": "https://github.com/zworcester/barMate",
     "keywords": [
         "Electron",
         "Master Electron",
         "demo"
     ],
-    "author": "GitHub, Stackacademytv",
+    "author": "Zachary Worcester, Elizabeth Steubs, Edgar Castro",
     "license": "CC0-1.0",
     "devDependencies": {
         "electron": "^20.1.3",
+        "electron-builder": "^23.6.0",
         "nodemon": "^2.0.0"
     },
     "dependencies": {
