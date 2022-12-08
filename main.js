@@ -6,6 +6,8 @@ if(process.argv.includes("-h") || process.argv.includes("--help")){
   process.exit();
 }
 
+console.log(app.getPath('documents'));
+
 const ARGS_DEV = (process.argv.includes("--dev") || process.argv.includes('-d')) ? true : false;
 
 // Keep a global reference of the window object, if you don't, the window will
