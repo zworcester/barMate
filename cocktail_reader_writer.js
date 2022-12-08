@@ -10,8 +10,10 @@ class CocktailReaderWriter{
     // The constructor takes a path to a json file as a string. It then opens the document and loads it into memory as a javascript object.
     // It is accessible by the document field of this class.
     constructor(json_file) {
-        this.file_path = json_file
-        this.document = JSON.parse(fs.readFileSync(path.join(__dirname, json_file), 'utf8').toString());
+        this.file_path = json_file;
+
+        const datafile = path.join(localStorage.getItem('path'), 'barMate', 'data', this.file_path);
+        this.document = JSON.parse(fs.readFileSync(datafile, 'utf8').toString());
     }
 
     // getCocktail gets the cocktail that has the same name as the supplied string. If no such cocktail exists, undefined is returned
@@ -81,7 +83,8 @@ class CocktailReaderWriter{
     }
 
     writeToFile() {
-        fs.writeFileSync(path.join(__dirname, this.file_path), JSON.stringify(this.document));
+        const datafile = path.join(localStorage.getItem('path'), 'barMate', 'data', this.file_path);
+        fs.writeFileSync(datafile, JSON.stringify(this.document));
     }
 
 };

@@ -15,6 +15,7 @@
     <script src="cocktail_reader_writer.js"></script>
     <script src="temp_cocktail_data_handler.js"></script>
     <script>
+
         function plusButton() {
             document.getElementById("new_ingredient_form").style.setProperty('display', 'block');
             document.getElementById("plus-button").disabled = true;
@@ -25,7 +26,7 @@
         }
 
         function changeCocktail(which) {
-            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+            const cocktail_writer = new CocktailReaderWriter("cocktail_journal.json");
             temp_data_handler.resetAllFields();
 
             temp_data_handler.setCocktail(which, cocktail_writer.getCocktail(which));
@@ -33,7 +34,7 @@
         }
 
         function updateCocktailList() {
-            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+            const cocktail_writer = new CocktailReaderWriter("cocktail_journal.json");
             const select = document.getElementById("cocktail_select");
             select.innerHTML = "<option value=\"-1\">New Cocktail</option>"
 
@@ -62,7 +63,7 @@
         }
 
         function saveButton() {
-            const cocktail_writer = new CocktailReaderWriter("data/cocktail_journal.json");
+            const cocktail_writer = new CocktailReaderWriter("cocktail_journal.json");
 
             let SAVE_NAME = temp_data_handler.getName();
             let SAVE_DESC = temp_data_handler.getDescription();
@@ -93,18 +94,17 @@
                 SAVE_INGS = {};
             }
 
+            const imagedir = path.join(localStorage.getItem('path'), 'barMate', 'data', 'images');
+
 
             // This route is followed if we are making a new cocktail
             if (temp_data_handler.getWhich() == null || temp_data_handler.getWhich() < 0) {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("data/images/" + new_img_name) && SAVE_IMG != "data/images/" + new_img_name) {
-                    fs.copyFile(SAVE_IMG, "data/images/" + new_img_name, (err) => {
-                        if (err) throw err;
-                        console.log(SAVE_IMG + ' was copied to data/images/' + new_img_name);
-                    });
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync(path.join(imagedir, new_img_name)) && SAVE_IMG != path.join(imagedir, new_img_name)) {
+                    fs.copyFileSync(SAVE_IMG, path.join(imagedir, new_img_name));
 
-                    final_image_name = "data/images/" + new_img_name;
+                    final_image_name = path.join(imagedir, new_img_name);
                 }
                 else if (SAVE_IMG == null || SAVE_IMG === ''){
                     final_image_name = "images/null.png"
@@ -116,13 +116,10 @@
             } else {
                 let new_img_name = path.basename(SAVE_IMG);
 
-                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync("data/images/" + new_img_name) && SAVE_IMG != "data/images/" + new_img_name) {
-                    fs.copyFile(SAVE_IMG, "data/images/" + new_img_name, (err) => {
-                        if (err) throw err;
-                        console.log(SAVE_IMG + ' was copied to data/images/' + new_img_name);
-                    });
+                if ((SAVE_IMG != "" && SAVE_IMG != "images/null.png") && !fs.existsSync(path.join(imagedir, new_img_name)) && SAVE_IMG != path.join(imagedir, new_img_name)) {
+                    fs.copyFileSync(SAVE_IMG, path.join(imagedir, new_img_name));
 
-                    final_image_name = "data/images/" + new_img_name;
+                    final_image_name = path.join(imagedir, new_img_name);
                 }
                 else if (SAVE_IMG == null || SAVE_IMG === ''){
                     final_image_name = "images/null.png"

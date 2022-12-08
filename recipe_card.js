@@ -32,13 +32,11 @@ class CocktailCard{
 	getCard(idx){
 		let ingredients_string = "";
 
-		const nuImg = path.join(__dirname, this.image);
-
 		for (const ing in this.ingredients){
 			ingredients_string += ("<tr><th>" + ing + "</th><th>ABV: " + this.ingredients[ing][0] + "</th><th>Ratio: " + this.ingredients[ing][1] + "</th></tr>");
 		}
 
-	return "<div class=\"col\" id=\"card-" + this.name + "\"><div class=\"card\"><div class=\"img-box\"><img src=\"" + nuImg + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>" + this.getABV() + "% ABV</span></h2><div class=\"data\" style=\"text-align: center\"><span style=\"color:black\">" + this.description + "</span></div><div class =\"action-Button\"><div class=\"deleteButton\"><button id=\""+ idx + "\" name=\"delete_Buttons\">Delete</button></div><button><a name=\"link\" href=\"javascript:localStorage.setItem(\'temp_cocktail_which\', " + idx + ");window.location=\'builder.html\'\">View</a></button></div></div></div></div></div>";
+	return "<div class=\"col\" id=\"card-" + this.name + "\"><div class=\"card\"><div class=\"img-box\"><img src=\"" + this.image + "\"></div><div class=\"content\"><div class=\"details\"><h2>" + this.name + "<br><span>" + this.getABV() + "% ABV</span></h2><div class=\"data\" style=\"text-align: center\"><span style=\"color:black\">" + this.description + "</span></div><div class =\"action-Button\"><div class=\"deleteButton\"><button id=\""+ idx + "\" name=\"delete_Buttons\">Delete</button></div><button><a name=\"link\" href=\"javascript:localStorage.setItem(\'temp_cocktail_which\', " + idx + ");window.location=\'builder.html\'\">View</a></button></div></div></div></div></div>";
 	}
 
 };

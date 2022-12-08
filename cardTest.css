@@ -16,32 +16,92 @@
     margin: 0;
 }
 
-.navbar-nav {
+/* .navbar-nav {
     justify-content: right;
     margin-right: 125px;
+} */
+
+
+/*-********************************Side Menu Icons *************************-*/
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+    top: 0;
+    width: 100%;
 }
 
-.container-fluid {
+.stickyRight-o {
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    height: 50%;
+    padding-bottom: 50px;
+    visibility: hidden;
+}
+
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.sideMenu {
+    padding-bottom: 20px;
+}
+
+
+/* .container-fluid {
     top: 0;
     left: 30px;
     padding-left: 0;
     padding-right: 0;
     width: 100%;
     position: fixed;
+} */
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    /* background: linear-gradient( rgba(49, 47, 47, 0.1), rgba(49, 47, 47,
+    0.418)); /
+    / background: linear-gradient(-315deg, #fbda61, #ff5acd); */
+    border-radius: 1rem;
+    margin-top: 20px;
+    padding: 20px;
+    z-index: -1;
 }
 
 body {
-    color: green;
-    display: flex;
+    /* color: green;
+    display: flex; */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(45deg, #fbda61, #ff5acd);
 }
 
+i {
+    margin-right: 20px;
+    padding-left: 25px;
+    color: #646464;
+}
+
 .col {
     /*margin: 50px 10px;*/
     margin: 33px auto;
+    /* margin: 50px 50px;
+    display: flex;
+    justify-content: center; */
+}
+
+.row {
+    margin: auto;
+    width: 100%;
+    padding-top: 50px;
 }
 
 .card {
@@ -164,7 +224,11 @@ body {
 .card .content .details .action-Button button:nth-child(2) {
     border: 1px solid #999;
     color: #999;
-    background: #fff;
+    background: #999;
+}
+
+a {
+    color: white;
 }
 
 .card .content .details .data table {
@@ -201,15 +265,11 @@ th {
     font-size: 1em;
     font-weight: 500;
     background: #ff5f95;
-    color: #fff;
+    color: #505050;
     cursor: pointer;
 }
 
-.row {
-    margin: auto;
-    width: 90%;
-    padding-top: 50px;
-}
+
 
 .data {
     overflow-y: auto;
